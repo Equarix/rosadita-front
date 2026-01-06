@@ -1,0 +1,9 @@
+.border-footer {
+  background: linear-gradient(to right, #60a5fa, #c084fc, #f472b6);
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  display: block;
+  right: 0px;
+  top: 0px;
+}
