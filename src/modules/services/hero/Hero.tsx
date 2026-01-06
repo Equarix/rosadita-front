@@ -4,7 +4,7 @@ import { LuBadgeCheck } from "react-icons/lu";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col gap-6 items-center justify-center relative">
+    <section className="flex flex-col gap-6 items-center justify-center relative w-full">
       <span className="block size-150 bg-hero rounded-full absolute -top-full right-0" />
 
       <Chip className="border-[#DBEAFE] bg-[#EFF6FF] text-[#137FEC]">
