@@ -5,7 +5,7 @@ import CharCircle from "@/components/ui/char-circle/CharCircle";
 
 export default function Footer() {
   return (
-    <footer className="flex relative items-center justify-between w-full py-12 px-6">
+    <footer className="flex z-10 relative items-center justify-between w-full py-12 px-6 bg-white">
       <span className="border-footer" />
 
       <section className="flex flex-col gap-y-3.5">

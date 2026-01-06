@@ -1,0 +1,4 @@
+.bg-hero {
+  background: linear-gradient(rgba(96, 165, 250, 0.2), rgba(168, 85, 247, 0.2));
+  filter: blur(80px);
+}
