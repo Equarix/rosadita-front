@@ -106,8 +106,8 @@ export default function Home() {
               DevOps & CI/CD
             </h3>
             <p className="text-gray-500 text-sm">
-              
-Canalizaciones automatizadas y contenedorización para optimizar el proceso de desarrollo e implementación.
+              Canalizaciones automatizadas y contenedorización para optimizar el
+              proceso de desarrollo e implementación.
             </p>
           </div>
 
@@ -119,7 +119,8 @@ Canalizaciones automatizadas y contenedorización para optimizar el proceso de d
               CiberSeguridad
             </h3>
             <p className="text-gray-500 text-sm">
-              Implementando sólidas medidas de seguridad para proteger sus datos y garantizar el cumplimiento de los estándares de la industria.
+              Implementando sólidas medidas de seguridad para proteger sus datos
+              y garantizar el cumplimiento de los estándares de la industria.
             </p>
           </div>
 
@@ -131,7 +132,9 @@ Canalizaciones automatizadas y contenedorización para optimizar el proceso de d
               Analisis de Datos
             </h3>
             <p className="text-gray-500 text-sm">
-              Transformamos datos sin procesar en información útil mediante paneles de control personalizados y soluciones de inteligencia empresarial.
+              Transformamos datos sin procesar en información útil mediante
+              paneles de control personalizados y soluciones de inteligencia
+              empresarial.
             </p>
           </div>
         </div>
