@@ -109,7 +109,7 @@ export default function page() {
 
               <div className="p-6">
                 <h3 className="font-bold text-lg mb-2">
-                  App de Delivery "FastEat"
+                  App de Delivery &quot;FastEat&quot;
                 </h3>
                 <p className="text-gray-500 text-sm mb-6">
                   Aplicación nativa iOS y Android con rastreo GPS en vivo para
