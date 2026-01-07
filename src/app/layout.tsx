@@ -22,7 +22,9 @@ export default function RootLayout({
         className={`${inter.variable} antialiased font-inter content overflow-x-hidden`}
       >
         <Header />
-        <main className="flex flex-col h-full">{children}</main>
+        <main className="flex flex-col h-full overflow-x-hidden">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
