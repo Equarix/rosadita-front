@@ -18,6 +18,10 @@ const navLinks = [
     label: "Servicios",
   },
   {
+    href: "/blog",
+    label: "Blog",
+  },
+  {
     href: "/contacto",
     label: "Contacto",
   },

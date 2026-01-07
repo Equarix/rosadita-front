@@ -18,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased font-inter content`}>
+      <body
+        className={`${inter.variable} antialiased font-inter content overflow-x-hidden`}
+      >
         <Header />
         <main className="flex flex-col h-full bg-[#F6F7F8]">{children}</main>
         <Footer />
