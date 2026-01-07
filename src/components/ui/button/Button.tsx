@@ -15,14 +15,14 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const variantClasses: Record<Variant, string> = {
-    primary: "bg-blue-500 text-white",
-    secondary: "bg-[#F1F5F9] text-[#334155]",
+    primary: "bg-blue-500 text-white hover:bg-blue-700",
+    secondary: "bg-[#F1F5F9] text-[#334155] hover:bg-gray-100 transition",
   };
 
   return (
     <button
       className={cx(
-        "px-8 py-2 rounded-lg font-semibold",
+        "px-8 py-2 rounded-lg font-semibold transition",
         variantClasses[variant],
         className
       )}
