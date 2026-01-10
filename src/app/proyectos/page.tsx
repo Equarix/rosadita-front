@@ -28,7 +28,7 @@ export default function page() {
           </div>
         </div>
       </div>
-      <div className="h-300 bg-gray-200 flex flex-col justify-center items-center">
+      <div className="h-310 bg-gray-200 flex flex-col justify-center items-center">
         <div className="w-full w-max rounded-2xl bg-white">
           <div className="grid grid-cols-5 py-1">
             <div className="flex justify-center items-center">
@@ -255,7 +255,44 @@ export default function page() {
               </div>
             </div>
           </div>
+          <div className="flex justify-center items-center py-10">
+            <button className="bg-white hover:bg-gray-300 text-gray-700 font-bold text-md py-2 px-4 rounded">
+              Cargar más proyectos ↓
+            </button>
+          </div>
         </div>
+      </div>
+      <div className="relative h-[100px] w-full">
+        <div className=" inset-0 bg-black/40"></div>
+        <section className="w-full h-200 flex items-center justify-center bg-gradient-to-br from-[#020617] via-[#0b1e3b] to-[#2b1b5a] overflow-hidden">
+          <div className="relative z-10 max-w-4xl text-center px-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1 mb-6 rounded-full bg-white/10 text-green-400 text-xs font-semibold tracking-wide">
+              <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+              INNOVACIÓN CONTINUA
+            </div>
+            <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+              ¿Tienes un proyecto en mente?
+              <br />
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Hagámoslo realidad.
+              </span>
+            </h1>
+            <p className="mt-6 text-gray-300 max-w-2xl mx-auto leading-relaxed">
+              Nuestro equipo está listo para ayudarte a convertir tu visión
+              abstracta en una realidad digital de alto impacto. Diseño,
+              estrategia y tecnología en un solo lugar.
+            </p>
+            <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+              <button className="px-8 py-3 rounded-full bg-white text-black font-semibold hover:scale-105 transition">
+                Iniciar Proyecto Hoy
+              </button>
+              <button className="px-8 py-3 rounded-full border border-white/30 text-white font-semibold flex items-center justify-center gap-2 hover:bg-white/10 transition">
+                Contactar Expertos ↗
+              </button>
+            </div>
+          </div>
+          <div className="absolute -bottom-40 right-0 w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[120px]"></div>
+        </section>
       </div>
     </div>
   );
