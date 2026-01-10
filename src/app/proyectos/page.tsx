@@ -1,12 +1,12 @@
 import FooterProject from "@/modules/projects/components/FooterProject";
 import HeroProjects from "@/modules/projects/components/Hero";
 
-export default function page() {
+export default function ProjectPage() {
   return (
     <div className="w-full h-full flex flex-col">
       <HeroProjects />
       <div className="h-310 bg-gray-200 flex flex-col justify-center items-center">
-        <div className="w-full w-max rounded-2xl bg-white">
+        <div className="w-max rounded-2xl bg-white">
           <div className="grid grid-cols-5 py-1">
             <div className="flex justify-center items-center">
               <button className="px-7 py-3 rounded-xl transition-all duration-200 hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white">
