@@ -21,8 +21,8 @@ export default function ServiceCard({
             className: "text-white w-8 h-8",
           })}
       </div>
-      <h3 className="font-inter font-bold text-xl pt-6 pb-2.5">{title}</h3>
-      <p className="text-gray-500 text-sm">{description}</p>
+      <h3 className="font-inter font-bold text-xl pt-6 pb-2.5 z-10">{title}</h3>
+      <p className="text-gray-500 text-sm z-10">{description}</p>
     </div>
   );
 }
