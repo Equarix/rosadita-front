@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
+import QueryProvider from "@/context/QueryProvider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -21,11 +22,13 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased font-inter content overflow-x-hidden`}
       >
-        <Header />
-        <main className="flex flex-col h-full overflow-x-hidden">
-          {children}
-        </main>
-        <Footer />
+        <QueryProvider>
+          <Header />
+          <main className="flex flex-col h-full overflow-x-hidden">
+            {children}
+          </main>
+          <Footer />
+        </QueryProvider>
       </body>
     </html>
   );

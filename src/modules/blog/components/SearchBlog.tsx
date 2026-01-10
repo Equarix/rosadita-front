@@ -1,5 +1,8 @@
+"use client";
 import Button from "@/components/ui/button/Button";
 import cx from "@/utils/cx";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useState } from "react";
 import { LuSearch } from "react-icons/lu";
 
 interface SearchBlogProps {
@@ -7,6 +10,21 @@ interface SearchBlogProps {
 }
 
 export default function SearchBlog({ className }: SearchBlogProps) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [value, setValue] = useState<string>(searchParams.get("search") || "");
+
+  const onSearch = () => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (value) {
+      params.set("search", value);
+    } else {
+      params.delete("search");
+    }
+
+    router.push(`?${params.toString()}`);
+  };
+
   return (
     <div
       className={cx(
@@ -22,9 +40,16 @@ export default function SearchBlog({ className }: SearchBlogProps) {
         type="text"
         className="py-4.5 px-4 text-[#94A3B8] w-full"
         placeholder="Buscar artículos, temas o autores..."
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            onSearch();
+          }
+        }}
       />
 
-      <Button variant="secondary" className="py-2 px-4">
+      <Button variant="secondary" className="py-2 px-4" onClick={onSearch}>
         Buscar
       </Button>
     </div>

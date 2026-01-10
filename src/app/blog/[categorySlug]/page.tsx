@@ -5,7 +5,13 @@ import FooterBlog from "@/modules/blog/footer/Footer";
 import HeroBlog from "@/modules/blog/hero/HeroBlog";
 import BlogSections from "@/modules/blog/sections/BlogSections";
 
-export default async function BlogPage() {
+export default async function CategorySlug({
+  params,
+}: {
+  params: Promise<{ categorySlug: string }>;
+}) {
+  const { categorySlug } = await params;
+
   const res = await fetch(`${env.NEXT_PUBLIC_API_URL}/public/category`);
   const categories: ResponseApi<ResponseCategory[]> = await res.json();
 
@@ -17,7 +23,7 @@ export default async function BlogPage() {
         <CategoriesSection categories={categories.body} />
       </section>
 
-      <BlogSections />
+      <BlogSections categorySlug={categorySlug} />
 
       <FooterBlog />
     </div>

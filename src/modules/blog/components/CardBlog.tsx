@@ -7,6 +7,7 @@ import { es } from "date-fns/locale";
 import Image from "next/image";
 import { BiSolidUserCircle } from "react-icons/bi";
 import { LuArrowRight, LuCalendar, LuClock } from "react-icons/lu";
+import { motion } from "motion/react";
 
 interface CardBlogProps {
   blog: ResponseBlog;
@@ -16,7 +17,13 @@ export default function CardBlog({ blog }: CardBlogProps) {
   const color = getColorCategory(blog.category.color);
 
   return (
-    <div className="flex flex-col w-full h-full border rounded-2xl border-slate-200">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      className="flex flex-col w-full h-full border rounded-2xl border-slate-200"
+    >
       <header className="w-full relative min-h-40.75 rounded-t-2xl">
         <Image
           src={blog.image.url}
@@ -66,6 +73,6 @@ export default function CardBlog({ blog }: CardBlogProps) {
 
         <LuArrowRight size={24} className="text-blue-600" />
       </footer>
-    </div>
+    </motion.div>
   );
 }

@@ -22,7 +22,7 @@ export default function Button({
   return (
     <button
       className={cx(
-        "px-8 py-2 rounded-lg font-semibold transition",
+        "px-8 py-2 rounded-lg font-semibold transition cursor-pointer",
         variantClasses[variant],
         className
       )}
