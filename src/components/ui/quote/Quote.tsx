@@ -14,14 +14,14 @@ export default function Quote({
   userPosition,
 }: QuoteProps) {
   return (
-    <section className="h-[280px] md:h-[320px] flex justify-center items-center border border-gray-200 shadow-sm rounded-lg px-6">
+    <section className="py-22.5 flex justify-center items-center border border-gray-200 shadow-sm rounded-lg px-6">
       <div className="flex flex-col justify-center items-center  text-center px-6">
         <div className="flex flex-col justify-center items-center">
           <h1 className="justify-center flex items-center mb-4 text-3xl font-semibold text-gray-900">
             <FaQuoteRight />
           </h1>
           <h1 className="text-xl  font-extrabold  leading-tight max-w-2xl">
-            "{quoteText}"
+            &quot;{quoteText}&quot;
           </h1>
         </div>
 

@@ -8,6 +8,7 @@ import Details from "../details/Details";
 import ImageComponent from "../image-component/ImageComponent";
 import NextArticle from "../next-article/NextArticle";
 import TimeLine from "../time-line/TimeLine";
+import Quote from "../quote/Quote";
 
 export default function Component({ type, ...props }: ComponentType) {
   const ComponentMap: Record<ComponentEnum, ReactNode> = {
@@ -17,7 +18,7 @@ export default function Component({ type, ...props }: ComponentType) {
     NEXT_ARTICLE: <NextArticle {...props.nextArticleComponent!} />,
     TIME_LINE: <TimeLine items={props.timeLineComponent!} />,
     CODE: <div>Code Component - To be implemented</div>,
-    QUOTE: <div>Quote Component - To be implemented</div>,
+    QUOTE: <Quote {...props.quoteComponent!} />,
     UNKNOWN: <div>Unknown Component Type</div>,
   };
 

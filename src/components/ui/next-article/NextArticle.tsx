@@ -11,10 +11,10 @@ export default function NextArticle({
   title,
   header,
   buttonText,
-  articleUrl,
-}: NextArticleProps) {
+}: // articleUrl,
+NextArticleProps) {
   return (
-    <section className="relative w-full h-[280px] md:h-[320px] flex justify-center items-center overflow-hidden">
+    <section className="relative py-24 w-full flex justify-center items-center overflow-hidden">
       <Image
         src="/images/fondoarticle.png"
         alt="Artículo destacado"
@@ -23,16 +23,16 @@ export default function NextArticle({
         height={1080}
       />
 
-      <div className="absolute inset-0 bg-gradient-to-r from-black/100 via-black/80 to-black/20"></div>
+      <div className="absolute inset-0 bg-linear-to-r from-black via-black/80 to-black/20"></div>
 
       <div className="flex flex-col  z-20  text-left px-6 ">
         <div className="flex flex-col w-2xl">
           <span className="mb-4 text-xs font-semibold text-blue-400">
-            {header} asjdahjkashj
+            {header}
           </span>
 
           <h1 className="text-2xl md:text-4xl font-extrabold text-white leading-tight ">
-            {title} asdklsadkasdjlk asjaskasjkjhkasjkhsajashjask asjasdjkashdjk
+            {title}
           </h1>
         </div>
 
