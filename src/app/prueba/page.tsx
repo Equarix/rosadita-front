@@ -12,6 +12,8 @@ const data = {
     "https://res.cloudinary.com/dl0wif5vm/image/upload/v1767764593/b4bxn2wxkmbc77o8cgm0.jpg",
   buttonLive: "asd",
   buttonDemo: "asd",
+  description:
+    "Desarrollo de software personalizado, adaptado a la escalabilidad de su empresa. Transformamos problemas complejos en soluciones elegantes y escalables.",
 };
 
 const detailsData = [
