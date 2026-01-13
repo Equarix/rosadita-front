@@ -36,12 +36,10 @@ export default function HeroBlog({
         height={1080}
       />
 
-      <div className="w-full h-full bg-linear-to-t from-black to-transparent absolute top-0 right-0 z-2" />
-
-      <div className="flex flex-col z-20 max-w-4xl text-left px-6 pb-20">
+      <div className="flex flex-col  z-20 max-w-4xl text-left px-6">
         <div className="inline-flex items-center gap-2 px-4 py-1 mb-6 text-xs font-semibold tracking-wide">
           <div className=" px-3 py-1 rounded-md bg-blue-500 text-white ">
-            <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+            <span className="w-2 h-2 rounded-full"></span>
             {category.name}
           </div>
           <div className="text-white font-inter">
@@ -49,20 +47,20 @@ export default function HeroBlog({
             {createdAt} · {timeline} lectura
           </div>
         </div>
-
-        <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
-          {blogName.split(" ").map((word, index) => {
-            if (word.toLowerCase() === blogKey.toLowerCase()) {
-              return (
-                <span key={index} className="text-[#137FEC] px-1 rounded-md">
-                  {word}{" "}
-                </span>
-              );
-            }
-            return word + " ";
-          })}
-        </h1>
       </div>
+
+      <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+        {blogName.split(" ").map((word, index) => {
+          if (word.toLowerCase() === blogKey.toLowerCase()) {
+            return (
+              <span key={index} className="text-[#137FEC] px-1 rounded-md">
+                {word}{" "}
+              </span>
+            );
+          }
+          return word + " ";
+        })}
+      </h1>
     </section>
   );
 }
