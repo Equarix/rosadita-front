@@ -1,8 +1,11 @@
+import Image from "next/image";
+
 export interface HeroBlogComponentProps {
   timeline: string;
   category: Category;
   blogName: string;
   createdAt: string;
+  blogKey: string;
   url: string;
 }
 
@@ -21,14 +24,17 @@ export default function HeroBlog({
   blogName,
   createdAt,
   url,
+  blogKey,
 }: HeroBlogComponentProps) {
   return (
     <div>
       <section className="relative w-full h-150 py-24 flex items-end justify-center overflow-hidden">
-        <img
+        <Image
           src={url}
           alt={blogName}
           className="absolute inset-0 w-full h-full object-cover z-0"
+          width={1920}
+          height={1080}
         />
 
         <div className="flex flex-col  z-20 max-w-4xl text-left px-6">
@@ -44,7 +50,16 @@ export default function HeroBlog({
           </div>
 
           <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
-            {blogName} holaaaaaaa askhasjkasas
+            {blogName.split(" ").map((word, index) => {
+              if (word.toLowerCase() === blogKey.toLowerCase()) {
+                return (
+                  <span key={index} className="text-[#137FEC] px-1 rounded-md">
+                    {word}{" "}
+                  </span>
+                );
+              }
+              return word + " ";
+            })}
           </h1>
         </div>
       </section>

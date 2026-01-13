@@ -48,7 +48,8 @@ const dataBlog = {
     categoryId: 8,
     color: "blue",
   },
-  blogName: "Sql Server",
+  blogName: "El Futuro de la Arquitectura Serverless en 2024",
+  blogKey: "Serverless",
   url: "https://res.cloudinary.com/dl0wif5vm/image/upload/v1767764593/b4bxn2wxkmbc77o8cgm0.jpg",
   createdAt: "2026-01-10T19:10:08.747Z",
 };
