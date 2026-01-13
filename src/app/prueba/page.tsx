@@ -8,7 +8,8 @@ const data = {
     text: "Case Study",
     color: "blue",
   },
-  image: "asd",
+  image:
+    "https://res.cloudinary.com/dl0wif5vm/image/upload/v1767764593/b4bxn2wxkmbc77o8cgm0.jpg",
   buttonLive: "asd",
   buttonDemo: "asd",
 };
