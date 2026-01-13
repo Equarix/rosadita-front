@@ -3,6 +3,7 @@ export interface HeroBlogComponentProps {
   category: Category;
   blogName: string;
   createdAt: string;
+  url: string;
 }
 
 export interface Category {
@@ -19,6 +20,7 @@ export default function HeroBlog({
   category,
   blogName,
   createdAt,
+  url,
 }: HeroBlogComponentProps) {
   return <div></div>;
 }

@@ -49,6 +49,7 @@ const dataBlog = {
     color: "blue",
   },
   blogName: "Sql Server",
+  url: "https://res.cloudinary.com/dl0wif5vm/image/upload/v1767764593/b4bxn2wxkmbc77o8cgm0.jpg",
   createdAt: "2026-01-10T19:10:08.747Z",
 };
 
@@ -61,7 +62,8 @@ const nextArticleData = {
 
 const quoteData = {
   quoteText: "ASD",
-  userImage: "asd",
+  userImage:
+    "https://res.cloudinary.com/dl0wif5vm/image/upload/v1767764593/b4bxn2wxkmbc77o8cgm0.jpg",
   userName: "asd",
   userPosition: "asd",
 };
