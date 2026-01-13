@@ -47,3 +47,5 @@ export interface ResponseImage {
   imageId: number;
   __v: number;
 }
+
+export type ColorType = "red" | "blue" | "green" | "yellow" | "purple";
