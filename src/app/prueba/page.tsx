@@ -62,7 +62,8 @@ const nextArticleData = {
 };
 
 const quoteData = {
-  quoteText: "ASD",
+  quoteText:
+    "Innovate Solutions didn't just rebuild our dashboard they completely reimagined how our clients interact with their financial data. The result is a tool that is not only faster but genuinely delightful to use.",
   userImage:
     "https://res.cloudinary.com/dl0wif5vm/image/upload/v1767764593/b4bxn2wxkmbc77o8cgm0.jpg",
   userName: "asd",
