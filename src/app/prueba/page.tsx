@@ -1,5 +1,8 @@
 import Details from "@/components/ui/details/Details";
+import HeroBlog from "@/components/ui/hero-blog/HeroBlog";
 import Hero from "@/components/ui/hero/Hero";
+import NextArticle from "@/components/ui/next-article/NextArticle";
+import Quote from "@/components/ui/quote/Quote";
 import React from "react";
 
 const data = {
@@ -35,12 +38,46 @@ const detailsData = [
   },
 ];
 
+const dataBlog = {
+  timeline: "5 min",
+  category: {
+    name: "Diseño UX/UI",
+    description: "Diseño UX/UI",
+    slug: "diseno-uxui",
+    status: true,
+    categoryId: 8,
+    color: "blue",
+  },
+  blogName: "Sql Server",
+  createdAt: "2026-01-10T19:10:08.747Z",
+};
+
+const nextArticleData = {
+  title: "a",
+  header: "a",
+  buttonText: "a2",
+  articleUrl: "url",
+};
+
+const quoteData = {
+  quoteText: "ASD",
+  userImage: "asd",
+  userName: "asd",
+  userPosition: "asd",
+};
+
 export default function page() {
   return (
     <div className="flex flex-col gap-20">
       <Hero {...data} />
 
       <Details details={detailsData} />
+
+      <HeroBlog {...dataBlog} />
+
+      <NextArticle {...nextArticleData} />
+
+      <Quote {...quoteData} />
     </div>
   );
 }

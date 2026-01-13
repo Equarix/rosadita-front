@@ -49,3 +49,11 @@ export interface ResponseImage {
 }
 
 export type ColorType = "red" | "blue" | "green" | "yellow" | "purple";
+
+export interface TimeLineComponent {
+  icon: string;
+  color: ColorType;
+  title: string;
+  description: string;
+  position: string;
+}
