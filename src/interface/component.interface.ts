@@ -9,6 +9,7 @@ export interface Component {
   timeLineComponent?: TimeLineComponent[];
   detailsComponent?: DetailsComponent[];
   quoteComponent?: QuoteComponent;
+  textComponent?: TextComponent;
 }
 
 export interface HeroComponent {
@@ -70,6 +71,7 @@ export type ComponentType =
   | "TIME_LINE"
   | "DETAILS"
   | "QUOTE"
+  | "TEXT"
   | "UNKNOWN";
 
 export type LanguageType =
@@ -80,3 +82,20 @@ export type LanguageType =
   | "REACT"
   | "HTML"
   | "SQL";
+
+export interface TextComponent {
+  content: JSONContent;
+}
+
+export type JSONContent = {
+  type?: string;
+  attrs?: Record<string, unknown>;
+  content?: JSONContent[];
+  marks?: {
+    type: string;
+    attrs?: Record<string, unknown>;
+    [key: string]: unknown;
+  }[];
+  text?: string;
+  [key: string]: unknown;
+};

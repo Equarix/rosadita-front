@@ -10,6 +10,7 @@ import NextArticle from "../next-article/NextArticle";
 import TimeLine from "../time-line/TimeLine";
 import Quote from "../quote/Quote";
 import Editor from "../editor/Editor";
+import TextComponent from "../text-component/TextComponent";
 
 export default function Component({ type, ...props }: ComponentType) {
   const ComponentMap: Record<ComponentEnum, ReactNode> = {
@@ -20,6 +21,7 @@ export default function Component({ type, ...props }: ComponentType) {
     TIME_LINE: <TimeLine items={props.timeLineComponent!} />,
     CODE: <Editor {...props.codeComponent!} />,
     QUOTE: <Quote {...props.quoteComponent!} />,
+    TEXT: <TextComponent {...props.textComponent!} />,
     UNKNOWN: <div>Unknown Component Type</div>,
   };
 
