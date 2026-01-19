@@ -1,6 +1,7 @@
 "use client";
 import Chip from "@/components/ui/chip/Chip";
 import SearchBlog from "../components/SearchBlog";
+import { Suspense } from "react";
 
 export default function HeroBlog() {
   return (
@@ -22,8 +23,9 @@ export default function HeroBlog() {
         negocio. Profundizamos en cada desafío para entregar resultados que
         escalan.
       </p>
-
-      <SearchBlog className="mt-4" />
+      <Suspense>
+        <SearchBlog className="mt-4" />
+      </Suspense>
     </section>
   );
 }

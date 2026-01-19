@@ -3,6 +3,7 @@ import {
   TextComponent as TextComponentInterface,
 } from "@/interface/component.interface";
 import React, { Fragment, ReactNode } from "react";
+import Image from "next/image";
 
 export default function TextComponent({ content }: TextComponentInterface) {
   if (!content) return null;
@@ -34,8 +35,8 @@ const renderNode = (node: JSONContent): ReactNode => {
         case "link":
           return (
             <a
-              href={mark.attrs?.href}
-              target={mark.attrs?.target}
+              href={mark.attrs?.href as string}
+              target={"_blank"}
               rel="noopener noreferrer"
               className="text-blue-400 hover:text-blue-300 underline"
             >
@@ -65,7 +66,7 @@ const renderNode = (node: JSONContent): ReactNode => {
       );
 
     case "heading":
-      const level = attrs?.level || 1;
+      const level = (attrs?.level || 1) as number;
       const HeadingTag = `h${level}` as any;
       const sizes: Record<number, string> = {
         1: "text-4xl font-bold mb-6",
@@ -76,7 +77,7 @@ const renderNode = (node: JSONContent): ReactNode => {
         6: "text-base font-medium mb-2",
       };
       return (
-        <HeadingTag className={sizes[level] || sizes[1]}>
+        <HeadingTag className={sizes[level as keyof typeof sizes] || sizes[1]}>
           {renderedContent}
         </HeadingTag>
       );
@@ -89,7 +90,7 @@ const renderNode = (node: JSONContent): ReactNode => {
       );
 
     case "orderedList":
-      const start = attrs?.start || 1;
+      const start = (attrs?.start as number) || 1;
       return (
         <ol
           start={start}
@@ -126,12 +127,17 @@ const renderNode = (node: JSONContent): ReactNode => {
       return <br />;
 
     case "image":
+      const imgSrc = (attrs?.src as string) || "";
+      const imgAlt = (attrs?.alt as string) || "";
+      const imgTitle = (attrs?.title as string) || undefined;
       return (
         <div className="my-6">
-          <img
-            src={attrs?.src}
-            alt={attrs?.alt || ""}
-            title={attrs?.title}
+          <Image
+            src={imgSrc}
+            alt={imgAlt}
+            title={imgTitle}
+            width={800}
+            height={600}
             className="rounded-lg max-w-full h-auto"
           />
         </div>

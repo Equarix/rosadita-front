@@ -43,6 +43,10 @@ export function useEditor(code: string, type: LanguageType) {
         parser: "babel",
         plugins: [parserBabel],
       },
+      SQL: {
+        parser: "babel",
+        plugins: [parserBabel],
+      },
     };
 
     return parserConfig[type];
@@ -73,7 +77,7 @@ export function useEditor(code: string, type: LanguageType) {
 
   const handleEditorDidMount = (
     editor: editor.IStandaloneCodeEditor,
-    monaco: Monaco
+    monaco: Monaco,
   ) => {
     editorRef.current = editor;
 

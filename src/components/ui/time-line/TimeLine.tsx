@@ -1,4 +1,4 @@
-import { TimeLineComponent } from "@/interface/api.interface";
+import { TimeLineComponent } from "@/interface/component.interface";
 import cx from "@/utils/cx";
 import { getColorClass } from "@/utils/getColor";
 import * as ReactIcons from "react-icons/lu";
@@ -21,7 +21,7 @@ export default function TimeLine({ items }: TimeLineProps) {
             <article
               className={cx(
                 "px-5.5 py-4.5 rounded-2xl relative",
-                getColorClass(i.color)
+                getColorClass(i.color),
               )}
             >
               <Icon className="text-white size-9" />
@@ -31,7 +31,7 @@ export default function TimeLine({ items }: TimeLineProps) {
                   "absolute bg-white border border-gray-100 shadow-lg rounded-3xl min-w-md top-1/2 -translate-y-1/2 p-8 ",
                   isLeft
                     ? "left-full translate-x-40"
-                    : "right-full -translate-x-40 text-end"
+                    : "right-full -translate-x-40 text-end",
                 )}
               >
                 <h3 className="font-semibold text-lg mb-2">{i.title}</h3>
