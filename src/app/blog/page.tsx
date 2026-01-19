@@ -37,15 +37,6 @@ export default async function BlogPage() {
       >
         <BlogSections />
       </Suspense>
-      <Suspense
-        fallback={
-          <div className="w-full flex items-center justify-center py-20">
-            Loading...
-          </div>
-        }
-      >
-        <BlogSections />
-      </Suspense>
 
       <FooterBlog />
     </div>

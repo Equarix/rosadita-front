@@ -32,8 +32,8 @@ export default async function DetailBlog({
         url={blog.image.url}
       />
 
-      <main className="flex items-center gap-16 w-full px-45 py-20">
-        <aside className="space-y-2 h-full min-w-60">
+      <main className="flex items-center gap-16 w-full px-45 py-20 max-w-full">
+        <aside className="space-y-2 h-full w-60">
           <LuCircleUser size={84} />
           <div>
             <h2 className="font-black text-xl">{blog.user.name}</h2>

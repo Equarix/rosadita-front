@@ -4,6 +4,7 @@ import {
 } from "@/interface/component.interface";
 import React, { Fragment, ReactNode } from "react";
 import Image from "next/image";
+import cx from "@/utils/cx";
 
 export default function TextComponent({ content }: TextComponentInterface) {
   if (!content) return null;
@@ -28,7 +29,7 @@ const renderNode = (node: JSONContent): ReactNode => {
           return <s className="line-through">{acc}</s>;
         case "code":
           return (
-            <code className="bg-gray-800 text-gold-500 rounded px-1 py-0.5 font-mono text-sm">
+            <code className="bg-gray-800 text-white text-gold-500 rounded px-1 py-0.5 font-mono text-sm">
               {acc}
             </code>
           );
@@ -60,7 +61,7 @@ const renderNode = (node: JSONContent): ReactNode => {
 
     case "paragraph":
       return (
-        <p className="leading-relaxed text-lg mb-4 text-gray-300">
+        <p className="leading-relaxed text-lg mb-4 text-black">
           {renderedContent}
         </p>
       );
@@ -77,7 +78,12 @@ const renderNode = (node: JSONContent): ReactNode => {
         6: "text-base font-medium mb-2",
       };
       return (
-        <HeadingTag className={sizes[level as keyof typeof sizes] || sizes[1]}>
+        <HeadingTag
+          className={cx(
+            "text-black",
+            sizes[level as keyof typeof sizes] || sizes[1],
+          )}
+        >
           {renderedContent}
         </HeadingTag>
       );
@@ -105,7 +111,7 @@ const renderNode = (node: JSONContent): ReactNode => {
 
     case "blockquote":
       return (
-        <blockquote className="border-l-4 border-gold-500 pl-4 py-2 my-4 italic text-gray-400 bg-gray-900/50 rounded-r">
+        <blockquote className="border-l-4 border-gold-500 pl-4 py-2 my-4 italic text-white bg-gray-900/50 rounded-r">
           {renderedContent}
         </blockquote>
       );
@@ -113,7 +119,7 @@ const renderNode = (node: JSONContent): ReactNode => {
     case "codeBlock":
       const language = attrs?.language || "text";
       return (
-        <pre className="bg-[#1e1e1e] p-4 rounded-lg overflow-x-auto mb-4 border border-gray-800">
+        <pre className="bg-[#1e1e1e] p-4 rounded-lg overflow-x-auto mb-4 border text-white border-gray-800">
           <code className={`language-${language} text-sm font-mono`}>
             {renderedContent}
           </code>

@@ -46,7 +46,7 @@ export default function HeroBlog({
           </div>
           <div className="text-white font-inter">
             {" "}
-            {createdAt} · {timeline} lectura
+            {createdAt.split("T")[0]} · {timeline} lectura
           </div>
         </div>
 
