@@ -6,6 +6,8 @@ import HeroBlog from "@/modules/blog/hero/HeroBlog";
 import BlogSections from "@/modules/blog/sections/BlogSections";
 import { Suspense } from "react";
 
+export const dynamic = "force-dynamic";
+
 export default async function BlogPage() {
   const res = await fetch(`${env.NEXT_PUBLIC_API_URL}/public/category`);
   const categories: ResponseApi<ResponseCategory[]> = await res.json();
