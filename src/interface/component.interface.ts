@@ -32,7 +32,7 @@ export interface ImageComponent {
 
 export interface CodeComponent {
   code: string;
-  type: string;
+  type: LanguageType;
 }
 
 export interface NextArticleComponent {
@@ -71,3 +71,12 @@ export type ComponentType =
   | "DETAILS"
   | "QUOTE"
   | "UNKNOWN";
+
+export type LanguageType =
+  | "TYPESCRIPT"
+  | "PYTHON"
+  | "JAVA"
+  | "CSHARP"
+  | "REACT"
+  | "HTML"
+  | "SQL";
