@@ -209,10 +209,12 @@ export default function Home() {
                     </div>
                     <div>
                       <h1 className="font-medium">Mensaje</h1>
-                      <input
-                        type="text"
-                        className="w-full border border-gray-300 rounded-md p-2 mt-2 mb-4 h-60"
-                      ></input>
+                      <textarea
+                        name=""
+                        id=""
+                        className="w-full border border-gray-300 rounded-md p-2 mt-2 mb-4 h-60 placeholder:text-sm text-gray-800"
+                        placeholder=""
+                      ></textarea>
                     </div>
                     <button className="bg-blue-600 w-full items-center text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
                       Enviar Mensaje
