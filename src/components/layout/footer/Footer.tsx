@@ -5,10 +5,10 @@ import CharCircle from "@/components/ui/char-circle/CharCircle";
 
 export default function Footer() {
   return (
-    <footer className="flex z-10 relative items-center justify-between w-full py-12 px-6 bg-white">
+    <footer className="flex flex-col md:flex-row z-10 relative items-start justify-between w-full py-8 px-6 bg-white">
       <span className="border-footer" />
 
-      <section className="flex flex-col gap-y-3.5">
+      <section className="flex flex-col gap-y-3.5 py-12 ">
         <span className="flex items-center gap-2 font-semibold text-xl">
           <FaDove className="text-blue-500" />
           Equarix
@@ -19,8 +19,7 @@ export default function Footer() {
           Construimos el futuro digital, línea de código a línea.
         </p>
       </section>
-
-      <section className="grid grid-cols-3 gap-16">
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-16">
         <div className="flex flex-col gap-3">
           <h3 className="font-semibold text-lg">Servicios</h3>
           <Link href="#">Desarrollo Web</Link>

@@ -4,7 +4,7 @@ import { CiLock } from "react-icons/ci";
 export default function page() {
   return (
     <div className="flex flex-col">
-      <section className="relative w-full py-24 flex items-center justify-center overflow-hidden">
+      <section className="relative w-full z-1 py-24 flex items-center justify-center overflow-hidden">
         <img
           src="/images/contacto.png"
           alt="Equipo trabajando"
