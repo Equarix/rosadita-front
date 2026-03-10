@@ -3,8 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
-import { Toaster, ToasterProps } from "sonner";
+import { Toaster } from "sonner";
 import QueryProvider from "@/context/QueryProvider";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -30,6 +31,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <Toaster richColors position="top-right" />
+          <Analytics />
         </QueryProvider>
       </body>
     </html>
