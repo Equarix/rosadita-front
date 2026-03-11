@@ -1,6 +1,19 @@
 import FooterProject from "@/modules/projects/components/FooterProject";
 import HeroProjects from "@/modules/projects/components/Hero";
 import ProjectCard from "@/modules/project/components/ProjectCard";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Casos de Éxito y Proyectos",
+  description: "Explora nuestro portafolio de proyectos exitosos. Desde aplicaciones fintech hasta plataformas retail, descubre cómo hemos ayudado a empresas a transformar sus ideas en realidades digitales de alto impacto.",
+  keywords: ["portafolio desarrollo software", "casos de éxito tecnología", "proyectos web", "ejemplos aplicaciones móviles", "transformación digital casos"],
+  openGraph: {
+    title: "Portafolio de Innovación Digital | Equarix",
+    description: "Vea cómo ayudamos a las empresas a transformar sus ideas en realidad.",
+    url: "https://equarix-front.vercel.app/proyectos",
+    images: ["/images/og-projects.jpg"],
+  },
+};
 export default function ProjectPage() {
   return (
     <div className="w-full h-full flex flex-col">

@@ -5,6 +5,19 @@ import FooterBlog from "@/modules/blog/footer/Footer";
 import HeroBlog from "@/modules/blog/hero/HeroBlog";
 import BlogSections from "@/modules/blog/sections/BlogSections";
 import { Suspense } from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog de Tecnología y Desarrollo",
+  description: "Artículos, tutoriales y noticias sobre las últimas tendencias en desarrollo de software, diseño UX/UI y transformación digital. Mantente al día con los expertos de Equarix.",
+  keywords: ["blog tecnología", "artículos programación", "noticias software", "tendencias digitales 2026", "consejos desarrollo web"],
+  openGraph: {
+    title: "Blog de Innovación Digital | Equarix",
+    description: "Compartimos conocimiento sobre el futuro de la tecnología.",
+    url: "https://equarix-front.vercel.app/blog",
+    images: ["/images/og-blog.jpg"],
+  },
+};
 
 export const dynamic = "force-dynamic";
 
