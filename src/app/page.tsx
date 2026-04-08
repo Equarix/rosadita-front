@@ -9,12 +9,12 @@ export default function Home() {
     <div className="relative overflow-hidden bg-white">
       <HeroHome />
 
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center px-5">
         <div className="font-inter font-bold text-4xl py-3">
           Nuestros Servicios
         </div>
         <div className="rounded-2xl w-24 h-1.5 bg-blue-600"></div>
-        <div className="py-5 text-gray-500 w-150 text-center text-lg">
+        <div className="py-5 text-gray-500 max-w-150 text-center text-lg">
           Ofrecemos servicios de desarrollo integral para ayudarte a mantener la
           ventaja en un entorno digital en constante evolución.
         </div>
@@ -25,12 +25,12 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center py-14">
-        <div className="font-inter font-bold text-4xl py-3">
+      <div className="flex flex-col w-full items-center justify-center py-14 px-5">
+        <div className="font-inter font-bold text-center text-4xl py-3">
           Portafolio Seleccionado
         </div>
         <div className="rounded-2xl w-24 h-1.5 bg-blue-600 "></div>
-        <div className="py-5 text-gray-500 w-150 text-center text-lg">
+        <div className="py-5 text-gray-500 max-w-150 text-center text-lg">
           Vea cómo hemos ayudado a las empresas a transformar sus ideas en
           realidad.
         </div>
@@ -128,7 +128,7 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="p-8">
+      <section className="sm:p-8">
         <ContactSection />
       </section>
     </div>

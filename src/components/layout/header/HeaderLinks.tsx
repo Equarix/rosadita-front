@@ -17,8 +17,8 @@ export function HeaderLinks({ vertical = false }) {
   return (
     <nav
       className={cx(
-        "flex gap-4 font-semibold",
-        vertical ? "flex-col text-base" : "items-center text-lg",
+        "hidden gap-4 font-semibold lg:flex",
+        vertical ? "flex-col text-base flex" : "items-center text-lg",
       )}
     >
       {navLinks.map((link) => (

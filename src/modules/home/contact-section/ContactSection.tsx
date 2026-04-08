@@ -1,11 +1,10 @@
-import React from "react";
 import CardForm from "../components/card-form/CardForm";
 import { IoMailSharp } from "react-icons/io5";
 import ContactHome from "../components/contact-home/ContactHome";
 
 export default function ContactSection() {
   return (
-    <div className="w-full flex items-center justify-center py-10 flex-col bg-gray-100 relative rounded-3xl">
+    <div className="w-full flex items-center justify-center sm:px-5 py-10 flex-col sm:bg-gray-100 relative rounded-3xl">
       <header className="flex flex-col items-center justify-center w-fit px-10 rounded-2xl py-10">
         <h2 className="font-inter font-bold text-3xl py-3">
           Ponte en contacto
@@ -14,12 +13,12 @@ export default function ContactSection() {
       </header>
       <section className="relative max-w-7xl mx-auto px-1 py-12 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative">
-          <div className="">
-            <h1 className="text-3xl font-inter font-black text-gray-900">
+          <div className="sm:block flex items-center justify-center flex-col">
+            <h1 className="text-3xl font-inter font-black text-gray-900 sm:text-start text-center">
               Construyamos algo grande juntos.
             </h1>
 
-            <p className="py-6 text-gray-500">
+            <p className="py-6 text-gray-500 sm:px-0 px-5 text-center sm:text-start">
               Si tiene alguna pregunta sobre nuestros servicios, precios o
               simplemente desea hablar sobre su próximo proyecto, nuestro equipo
               está listo para responder todas sus preguntas.

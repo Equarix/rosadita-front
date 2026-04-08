@@ -74,7 +74,7 @@ export default function ContactClient() {
       </header>
 
       <div className="flex flex-col items-center justify-center py-10 ">
-        <section className="relative flex flex-col rounded-2xl border border-gray-300 overflow-hidden shadow-2xl shadow-blue-300">
+        <section className="relative flex flex-col rounded-2xl sm:border border-gray-300 overflow-hidden sm:shadow-2xl shadow-blue-300">
           <div className="py-6 px-8  border-b border-gray-300">
             <h1 className="text-center text-2xl font-bold py-2">
               Formulario en Contacto

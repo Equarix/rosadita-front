@@ -5,8 +5,8 @@ import { IoRocketOutline } from "react-icons/io5";
 export default function HeroHome() {
   return (
     <div className="relative max-w-7xl mx-auto px-6 py-20 lg:py-24 flex flex-col items-center justify-center">
-      <span className="hidden md:block size-150 rounded-full bg-gradient-to-r from-[#60A5FA]/20 to-[#A855F7]/20 blur-[80px] absolute top-0 right-1/4 -translate-y-24" />
-      <span className="hidden md:block size-80 rounded-full absolute bg-gradient-to-r from-[#C084FC]/20 to-[#EC4899]/20 blur-3xl left-0 translate-x-1/4" />
+      <span className="hidden md:block size-150 rounded-full bg-linear-to-r from-[#60A5FA]/20 to-[#A855F7]/20 blur-[80px] absolute top-0 right-1/4 -translate-y-24" />
+      <span className="hidden md:block size-80 rounded-full absolute bg-linear-to-r from-[#C084FC]/20 to-[#EC4899]/20 blur-3xl left-0 translate-x-1/4" />
 
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         <div className="max-w-xl text-center lg:text-left">
@@ -26,11 +26,15 @@ export default function HeroHome() {
           </p>
 
           <div className="py-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <Button>Comencemos su proyecto juntos</Button>
-            <Button variant="secondary">Mira nuestro trabajo</Button>
+            <Button buttonType="link" href="/contacto">
+              Comencemos su proyecto juntos
+            </Button>
+            {/* <Button variant="secondary" buttonType="link" href="/trabajo">
+              Mira nuestro trabajo
+            </Button> */}
           </div>
         </div>
-        <div className="relative w-full max-w-md lg:max-w-none lg:w-[480px] lg:h-[300px] h-[220px] rounded-2xl overflow-hidden hover:shadow-2xl transition">
+        <div className="relative w-full max-w-md lg:max-w-none lg:w-120 lg:h-75 h-55 rounded-2xl overflow-hidden hover:shadow-2xl transition">
           <Image
             src="/images/portada.jpg"
             alt="Portada"

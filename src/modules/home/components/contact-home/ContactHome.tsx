@@ -34,7 +34,7 @@ export default function ContactHome() {
 
   return (
     <form
-      className="relative grid grid-cols-2 px-8 py-10 w-145 min-h-150 gap-4 bg-white rounded-2xl border border-gray-300 overflow-hidden shadow-lg"
+      className="relative flex flex-col sm:grid grid-cols-2 px-8 py-10 w-full xl:max-w-145 min-h-150 gap-4 bg-white rounded-2xl border border-gray-300 overflow-hidden shadow-lg"
       onSubmit={handleSubmit((data) => mutate(data))}
     >
       <AnimatePresence>
