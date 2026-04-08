@@ -28,8 +28,8 @@ export default function CardServices({
   title,
 }: CardServicesProps) {
   return (
-    <div className="p-10 rounded-3xl flex w-full gap-12 border max-w-284 border-slate-100 bg-white z-10 shadow-md">
-      <section className="flex flex-col gap-6 w-full max-w-1/3">
+    <div className="p-7 lg:p-10 rounded-3xl flex lg:flex-row flex-col w-full gap-12 border max-w-284 border-slate-100 bg-white z-10 shadow-md">
+      <section className="flex flex-col gap-6 w-full lg:max-w-1/3">
         <CharCircle
           className={cx("rounded-2xl size-16", mainColor, secondaryColor)}
         >
@@ -47,18 +47,18 @@ export default function CardServices({
         ))}
       </section>
 
-      <section className="w-full p-8 rounded-2xl bg-slate-50 max-h-max flex flex-col gap-6">
+      <section className="w-full p-4 sm:p-8 rounded-2xl bg-slate-50 max-h-max flex flex-col gap-6">
         <span className="flex items-center gap-2 font-bold">
           {cloneElement(
             cardFeatures.icon as ReactElement<{ className?: string }>,
             {
               className: cx("size-6", mainColor),
-            }
+            },
           )}
           {cardFeatures.title}
         </span>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           {cardFeatures.items.map((item, index) => (
             <FeatureCard
               key={index}
