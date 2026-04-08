@@ -32,17 +32,17 @@ export default async function DetailBlog({
         url={blog.image.url}
       />
 
-      <main className="flex items-center gap-16 w-full px-45 py-20 max-w-full">
-        <aside className="space-y-2 h-full w-60">
+      <main className="flex lg:flex-row flex-col items-center gap-4 sm:gap-16 w-full px-5 sm:px-10 lg:px-45 py-20 max-w-full">
+        <aside className="space-y-2 flex lg:flex-col lg:gap-0 gap-2 h-full w-full lg:w-60">
           <LuCircleUser size={84} />
-          <div>
+          <div className="w-full">
             <h2 className="font-black text-xl">{blog.user.name}</h2>
             <p className="text-sm">Senior Fullstack</p>
+            <p className="max-w-60 text-sm">
+              Apasionado por las arquitecturas distribuidas y el escalado masivo
+              de sistemas.
+            </p>
           </div>
-          <p className="max-w-60 text-sm">
-            Apasionado por las arquitecturas distribuidas y el escalado masivo
-            de sistemas.
-          </p>
         </aside>
         <section className="w-full h-full max-w-full flex flex-col gap-6">
           {blog.components.map((c, idx) => (

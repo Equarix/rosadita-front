@@ -19,8 +19,9 @@ export default async function CategorySlug({
   const categories: ResponseApi<ResponseCategory[]> = await res.json();
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center pt-24 gap-16 relative">
+    <div className="w-full h-full flex flex-col items-center justify-center pt-24 px-5 sm:px-0 gap-2 sm:gap-16 relative">
       <HeroBlog />
+
       <Suspense
         fallback={
           <div className="w-full flex items-center justify-center py-8">
@@ -28,10 +29,11 @@ export default async function CategorySlug({
           </div>
         }
       >
-        <section className="w-full border-b border-slate-200 py-4 flex items-center justify-center z-10 gap-3">
+        <section className="w-full border-b border-slate-200 sm:py-4 flex items-center justify-center z-10 gap-3">
           <CategoriesSection categories={categories.body} />
         </section>
       </Suspense>
+
       <Suspense
         fallback={
           <div className="w-full flex items-center justify-center py-20">
@@ -39,8 +41,9 @@ export default async function CategorySlug({
           </div>
         }
       >
-        <BlogSections categorySlug={categorySlug} />
+        <BlogSections />
       </Suspense>
+
       <FooterBlog />
     </div>
   );

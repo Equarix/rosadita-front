@@ -9,8 +9,15 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Blog de Tecnología y Desarrollo",
-  description: "Artículos, tutoriales y noticias sobre las últimas tendencias en desarrollo de software, diseño UX/UI y transformación digital. Mantente al día con los expertos de Equarix.",
-  keywords: ["blog tecnología", "artículos programación", "noticias software", "tendencias digitales 2026", "consejos desarrollo web"],
+  description:
+    "Artículos, tutoriales y noticias sobre las últimas tendencias en desarrollo de software, diseño UX/UI y transformación digital. Mantente al día con los expertos de Equarix.",
+  keywords: [
+    "blog tecnología",
+    "artículos programación",
+    "noticias software",
+    "tendencias digitales 2026",
+    "consejos desarrollo web",
+  ],
   openGraph: {
     title: "Blog de Innovación Digital | Equarix",
     description: "Compartimos conocimiento sobre el futuro de la tecnología.",
@@ -26,7 +33,7 @@ export default async function BlogPage() {
   const categories: ResponseApi<ResponseCategory[]> = await res.json();
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center pt-24 gap-16 relative">
+    <div className="w-full h-full flex flex-col items-center justify-center pt-24 px-5 sm:px-0 gap-2 sm:gap-16 relative">
       <HeroBlog />
 
       <Suspense
@@ -36,7 +43,7 @@ export default async function BlogPage() {
           </div>
         }
       >
-        <section className="w-full border-b border-slate-200 py-4 flex items-center justify-center z-10 gap-3">
+        <section className="w-full border-b border-slate-200 sm:py-4 flex items-center justify-center z-10 gap-3">
           <CategoriesSection categories={categories.body} />
         </section>
       </Suspense>

@@ -26,7 +26,7 @@ NextArticleProps) {
       <div className="absolute inset-0 bg-linear-to-r from-black via-black/80 to-black/20"></div>
 
       <div className="flex flex-col  z-20  text-left px-6 ">
-        <div className="flex flex-col w-2xl">
+        <div className="flex flex-col max-w-2xl">
           <span className="mb-4 text-xs font-semibold text-blue-400">
             {header}
           </span>

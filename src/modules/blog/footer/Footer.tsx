@@ -19,7 +19,7 @@ export default function FooterBlog() {
       <div className="flex items-center gap-3">
         <input
           type="text"
-          className="py-3.5 px-4 border border-[#CBD5E1] rounded-lg text-[#94A3B8]"
+          className="py-3.5 px-4 w-full border border-[#CBD5E1] rounded-lg text-[#94A3B8]"
           placeholder="tu@email.com"
         />
         <Button className="h-full">Suscribirse</Button>

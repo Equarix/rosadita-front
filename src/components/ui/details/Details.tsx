@@ -10,9 +10,9 @@ export interface DetailsProps {
 export default function Details({ details }: DetailsProps) {
   return (
     <div className="flex justify-center items-center border w-full border-gray-200 shadow-sm">
-      <div className="flex gap-25 p-8">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 py-8 lg:p-8">
         {details.map((detail, index) => (
-          <div key={index} className="flex flex-col items-center">
+          <div key={index} className="flex flex-col items-start gap-2">
             <h3 className="text-lg font-semibold text-gray-900">
               {detail.header}
             </h3>

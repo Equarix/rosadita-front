@@ -15,12 +15,12 @@ export default function ImageComponent(props: ImageComponentProps) {
       width={1200}
       height={800}
       className={cx(
-        "w-full max-w-full h-240 object-cover",
+        "w-full max-w-full lg:h-240 object-cover",
         props.imageType === "ROUNDED"
           ? "rounded-lg"
           : props.imageType === "CIRCLE"
-          ? "rounded-full"
-          : "rounded-none"
+            ? "rounded-full"
+            : "rounded-none",
       )}
     />
   );

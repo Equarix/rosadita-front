@@ -5,7 +5,7 @@ import { Suspense } from "react";
 
 export default function HeroBlog() {
   return (
-    <section className="flex flex-col items-center py-24 gap-6 relative w-full">
+    <section className="flex flex-col items-center py-24 gap-6 relative w-full ">
       <span className="block size-96 rounded-full bg-blue-700/20 blur-3xl absolute -top-1/2 right-0 translate-x-1/2" />
       <span className="block size-64 rounded-full bg-purple-600/20 blur-3xl absolute -bottom-1/2 -translate-x-1/2 left-0" />
 
@@ -14,11 +14,11 @@ export default function HeroBlog() {
         Nuestras últimas ideas
       </Chip>
 
-      <h1 className="font-black text-6xl">
+      <h1 className="font-black text-5xl text-center lg:text-start sm:text-6xl">
         Perspectivas e <span className="text-blue-700">Innovación</span>
       </h1>
 
-      <p className="w-160.75 text-center text-xl">
+      <p className="max-w-160.75 text-center text-lg sm:text-xl">
         Ingeniería de software de precisión diseñada para transformar modelos de
         negocio. Profundizamos en cada desafío para entregar resultados que
         escalan.

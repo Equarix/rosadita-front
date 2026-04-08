@@ -24,8 +24,8 @@ export default function Hero({
   description,
 }: HeroComponentProps) {
   return (
-    <div className="relative max-w-8xl mx-auto px-1 py-24 flex flex-col items-center justify-center">
-      <div className="flex items-center gap-16 ">
+    <div className="relative max-w-8xl mx-auto px-1 py-12 lg:py-24 flex flex-col items-center justify-center">
+      <div className="flex items-center gap-16 lg:flex-row flex-col">
         <div className="max-w-2xl">
           <span
             className={cx(
@@ -34,7 +34,7 @@ export default function Hero({
               span.color === "red" && "bg-red-100 text-red-800",
               span.color === "green" && "bg-green-100 text-green-800",
               span.color === "yellow" && "bg-yellow-100 text-yellow-800",
-              span.color === "purple" && "bg-purple-100 text-purple-800"
+              span.color === "purple" && "bg-purple-100 text-purple-800",
             )}
           >
             <IoRocketOutline />
@@ -50,7 +50,7 @@ export default function Hero({
             <Button variant="secondary">{buttonDemo}</Button>
           </div>
         </div>
-        <div className="relative w-120 h-75 rounded-2xl overflow-hidden hover:shadow-2xl transition ">
+        <div className="relative w-full lg:min-w-120 h-75 rounded-2xl overflow-hidden hover:shadow-2xl transition ">
           <img
             src={image}
             alt="Portada"

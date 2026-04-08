@@ -55,7 +55,7 @@ export default function BlogSections({ categorySlug }: BlogSectionsProps) {
   if (status === "pending") {
     return (
       <div className="flex flex-col items-center justify-center w-full max-w-240 px-4 py-12">
-        <section className="grid grid-cols-3 w-full gap-6">
+        <section className="grid sm:grid-cols-2 lg:grid-cols-3 w-full gap-6">
           {Array.from({ length: 6 }).map((_, i) => (
             <CardBlogSkeleton key={i} />
           ))}
@@ -66,7 +66,7 @@ export default function BlogSections({ categorySlug }: BlogSectionsProps) {
 
   return (
     <div className="flex flex-col items-center justify-center w-full max-w-240 px-4 py-12">
-      <section className="grid grid-cols-3 w-full gap-6">
+      <section className="grid sm:grid-cols-2 lg:grid-cols-3 w-full gap-6">
         <AnimatePresence>
           {blogs.map((blog) => (
             <CardBlog key={blog._id} blog={blog} />
