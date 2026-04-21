@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Blog de Innovación Digital | Equarix",
     description: "Compartimos conocimiento sobre el futuro de la tecnología.",
-    url: "https://equarix-front.vercel.app/blog",
+    url: "https://equarix.vercel.app/blog",
     images: ["/images/og-blog.jpg"],
   },
 };

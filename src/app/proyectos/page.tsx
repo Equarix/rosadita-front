@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Portafolio de Innovación Digital | Equarix",
     description: "Vea cómo ayudamos a las empresas a transformar sus ideas en realidad.",
-    url: "https://equarix-front.vercel.app/proyectos",
+    url: "https://equarix.vercel.app/proyectos",
     images: ["/images/og-projects.jpg"],
   },
 };

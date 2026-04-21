@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contacto | Equarix - Soluciones Digitales",
     description: "Estamos listos para transformar tu negocio con tecnología de punta. El primer paso es una simple conversación.",
-    url: "https://equarix-front.vercel.app/contacto",
+    url: "https://equarix.vercel.app/contacto",
     images: ["/images/og-contact.jpg"],
   },
 };

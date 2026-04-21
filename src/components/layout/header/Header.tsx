@@ -5,6 +5,8 @@ import { HeaderLinks } from "./HeaderLinks";
 import { useResponsiveHeader } from "../header/useResponsiveHeader";
 import { useEffect, useState } from "react";
 
+import Link from "next/link";
+
 export default function Header() {
   const [isMounted, setIsMounted] = useState(false);
   const { open, toggleMenu } = useResponsiveHeader();
@@ -15,10 +17,10 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 flex z-100000 w-full py-4 px-6 justify-between items-center border-b border-gray-200 bg-white">
-      <span className="flex items-center gap-2 font-semibold text-xl">
+      <Link href="/" className="flex items-center gap-2 font-semibold text-xl hover:opacity-80 transition">
         <FaDove className="text-blue-500" />
         Equarix
-      </span>
+      </Link>
 
       <HeaderLinks />
 
@@ -27,14 +29,14 @@ export default function Header() {
           Cotizar Servicio
         </Button>
 
-        {
-          <button
-            onClick={toggleMenu}
-            className="p-2 rounded-md hover:bg-gray-100 transition lg:hidden block"
-          >
-            <FaBars className="text-xl" />
-          </button>
-        }
+        <button
+          onClick={toggleMenu}
+          aria-label="Abrir menú de navegación"
+          aria-expanded={open}
+          className="p-2 rounded-md hover:bg-gray-100 transition lg:hidden block"
+        >
+          <FaBars className="text-xl" />
+        </button>
       </div>
 
       {open && (

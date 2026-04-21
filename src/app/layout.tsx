@@ -6,6 +6,7 @@ import Footer from "@/components/layout/footer/Footer";
 import { Toaster } from "sonner";
 import QueryProvider from "@/context/QueryProvider";
 import { Analytics } from "@vercel/analytics/next";
+import StructuredData from "@/components/seo/StructuredData";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -14,8 +15,8 @@ export const metadata: Metadata = {
     default: "Equarix | Soluciones Digitales y Desarrollo de Software",
     template: "%s | Equarix"
   },
-  description: "Equarix es una agencia de desarrollo de software especializada en soluciones digitales innovadoras, desarrollo web, aplicaciones móviles y transformación digital para empresas.",
-  keywords: ["desarrollo de software", "diseño web", "aplicaciones móviles", "transformación digital", "Equarix", "tecnología", "soluciones digitales"],
+  description: "Equarix es una agencia de desarrollo de software especializada en soluciones digitales innovadoras, desarrollo web a medida, aplicaciones móviles y transformación digital para empresas.",
+  keywords: ["desarrollo de software", "diseño web", "aplicaciones móviles", "transformación digital", "Equarix", "tecnología", "soluciones digitales", "software a medida", "Perú", "latam"],
   authors: [{ name: "Equarix" }],
   creator: "Equarix",
   publisher: "Equarix",
@@ -24,24 +25,24 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://equarix-front.vercel.app/"), // Ajustar a la URL real cuando esté definida
+  metadataBase: new URL("https://equarix.vercel.app/"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Equarix | Soluciones Digitales y Desarrollo de Software",
     description: "Transformamos tus ideas en realidad con tecnología de vanguardia. Expertos en desarrollo web, móvil y consultoría digital.",
-    url: "https://equarix-front.vercel.app/",
+    url: "https://equarix.vercel.app/",
     siteName: "Equarix",
     images: [
       {
-        url: "/images/og-image.jpg", // Asegúrate de que esta imagen exista en public/images/
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Equarix - Soluciones Digitales",
       },
     ],
-    locale: "es_ES",
+    locale: "es_PE",
     type: "website",
   },
   twitter: {
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     title: "Equarix | Soluciones Digitales y Desarrollo de Software",
     description: "Expertos en desarrollo de software y transformación digital.",
     images: ["/images/og-image.jpg"],
-    creator: "@equarix", // Ajustar si tienen cuenta de Twitter
+    creator: "@equarix",
   },
   robots: {
     index: true,
@@ -65,8 +66,10 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png", // Sugerido añadir
+    apple: "/apple-touch-icon.png",
   },
+  manifest: "/manifest.json",
+  category: "technology",
 };
 
 export default function RootLayout({
@@ -75,11 +78,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={`${inter.variable} antialiased font-inter content overflow-x-hidden flex flex-col`}
       >
         <QueryProvider>
+          <StructuredData />
           <Header />
           <main className="flex flex-col h-full overflow-x-hidden">
             {children}

@@ -1,0 +1,27 @@
+{
+  "name": "Equarix | Soluciones Digitales y Desarrollo de Software",
+  "short_name": "Equarix",
+  "description": "Agencia de desarrollo de software especializada en soluciones digitales innovadoras.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/images/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "categories": ["business", "technology", "productivity"]
+}

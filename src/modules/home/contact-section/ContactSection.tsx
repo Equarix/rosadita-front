@@ -27,13 +27,13 @@ export default function ContactSection() {
               <CardForm
                 icon={<IoMailSharp className="text-white" />}
                 label="Nuestro Email"
-                value="contacto@rosadita.com"
+                value="equarix@outlook.com"
               />
 
               <CardForm
                 icon={<IoMailSharp className="text-white" />}
                 label="Llamanos"
-                value="+1 (555) 123-4567"
+                value="+51 977834606"
               />
               <CardForm
                 icon={<IoMailSharp className="text-white" />}
