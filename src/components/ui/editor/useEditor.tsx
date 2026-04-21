@@ -10,7 +10,12 @@ import { Monaco } from "@monaco-editor/react";
 
 interface ParserConfig {
   parser: string;
-  plugins: (typeof parserEstree)[];
+  plugins: Array<
+    | typeof parserBabel
+    | typeof parserTypeScript
+    | typeof parserHtml
+    | typeof parserEstree
+  >;
 }
 
 export function useEditor(code: string, type: LanguageType) {
@@ -75,7 +80,7 @@ export function useEditor(code: string, type: LanguageType) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [code, type]);
 
-  const handleEditorDidMount = (
+  const handleEditorDidMount = (  
     editor: editor.IStandaloneCodeEditor,
     monaco: Monaco,
   ) => {
