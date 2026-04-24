@@ -7,7 +7,7 @@ import { Toaster } from "sonner";
 import QueryProvider from "@/context/QueryProvider";
 import { Analytics } from "@vercel/analytics/next";
 import StructuredData from "@/components/seo/StructuredData";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -106,6 +106,7 @@ export default function RootLayout({
           <Toaster richColors position="top-right" />
           <Analytics />
           <GoogleAnalytics gaId="G-GM7MZ5C5TW" />
+          <GoogleTagManager gtmId="G-GM7MZ5C5TW" />
         </QueryProvider>
       </body>
     </html>
