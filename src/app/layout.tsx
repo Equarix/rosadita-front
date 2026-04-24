@@ -7,16 +7,29 @@ import { Toaster } from "sonner";
 import QueryProvider from "@/context/QueryProvider";
 import { Analytics } from "@vercel/analytics/next";
 import StructuredData from "@/components/seo/StructuredData";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: {
     default: "Equarix | Soluciones Digitales y Desarrollo de Software",
-    template: "%s | Equarix"
+    template: "%s | Equarix",
   },
-  description: "Equarix es una agencia de desarrollo de software especializada en soluciones digitales innovadoras, desarrollo web a medida, aplicaciones móviles y transformación digital para empresas.",
-  keywords: ["desarrollo de software", "diseño web", "aplicaciones móviles", "transformación digital", "Equarix", "tecnología", "soluciones digitales", "software a medida", "Perú", "latam"],
+  description:
+    "Equarix es una agencia de desarrollo de software especializada en soluciones digitales innovadoras, desarrollo web a medida, aplicaciones móviles y transformación digital para empresas.",
+  keywords: [
+    "desarrollo de software",
+    "diseño web",
+    "aplicaciones móviles",
+    "transformación digital",
+    "Equarix",
+    "tecnología",
+    "soluciones digitales",
+    "software a medida",
+    "Perú",
+    "latam",
+  ],
   authors: [{ name: "Equarix" }],
   creator: "Equarix",
   publisher: "Equarix",
@@ -31,7 +44,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Equarix | Soluciones Digitales y Desarrollo de Software",
-    description: "Transformamos tus ideas en realidad con tecnología de vanguardia. Expertos en desarrollo web, móvil y consultoría digital.",
+    description:
+      "Transformamos tus ideas en realidad con tecnología de vanguardia. Expertos en desarrollo web, móvil y consultoría digital.",
     url: "https://equarix.vercel.app/",
     siteName: "Equarix",
     images: [
@@ -58,9 +72,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   icons: {
@@ -91,6 +105,7 @@ export default function RootLayout({
           <Footer />
           <Toaster richColors position="top-right" />
           <Analytics />
+          <GoogleAnalytics gaId="G-GM7MZ5C5TW" />
         </QueryProvider>
       </body>
     </html>
