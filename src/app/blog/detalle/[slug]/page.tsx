@@ -38,15 +38,16 @@ export default async function DetailBlog({
           <div className="w-full">
             <h2 className="font-black text-xl">{blog.user.name}</h2>
             <p className="text-sm">Senior Fullstack</p>
+
             <p className="max-w-60 text-sm">
               Apasionado por las arquitecturas distribuidas y el escalado masivo
               de sistemas.
             </p>
           </div>
         </aside>
-        <section className="w-full h-full max-w-full flex flex-col gap-6">
+        <section className="w-full h-full max-w-[1200px] mx-auto py-10 px-5 sm:px-10 lg:px-0 flex flex-col items-center justify-center">
           {blog.components.map((c, idx) => (
-            <Component key={idx.toString()} {...c} />
+            <Component key={idx.toString()} sectionId={c.key} {...c} />
           ))}
         </section>
       </main>

@@ -22,7 +22,7 @@ export default async function DetailProject({
   return (
     <div className="w-full h-full flex flex-col items-center justify-center">
       {blog.components.map((c, idx) => (
-        <Component key={idx.toString()} {...c} />
+        <Component key={idx.toString()} sectionId={c.key} {...c} />
       ))}
     </div>
   );

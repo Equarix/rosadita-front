@@ -16,7 +16,7 @@ import ImageCaptionComponent from "../image-caption/ImageCaptionComponent";
 import StatsComponent from "../stats/StatsComponent";
 import QuestionsComponent from "../questions/QuestionsComponent";
 
-export default function Component({ type, ...props }: ComponentType) {
+export default function Component({ type, sectionId, ...props }: ComponentType & { sectionId?: string }) {
   const ComponentMap: Record<ComponentEnum, ReactNode> = {
     HERO: <Hero {...props.heroComponent!} />,
     DETAILS: <Details details={props.detailsComponent!} />,
@@ -33,5 +33,11 @@ export default function Component({ type, ...props }: ComponentType) {
     UNKNOWN: <div>Unknown Component Type</div>,
   };
 
-  return ComponentMap[type] || ComponentMap["UNKNOWN"];
+  const component = ComponentMap[type] || ComponentMap["UNKNOWN"];
+
+  return (
+    <div id={sectionId || props.key} className="w-full">
+      {component}
+    </div>
+  );
 }

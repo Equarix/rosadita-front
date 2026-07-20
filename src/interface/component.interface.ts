@@ -3,6 +3,7 @@ import { ColorType, ImageType } from "./api.interface";
 export interface Component {
   type: ComponentType;
   key?: string;
+  sectionId?: string;
   headerComponent?: HeaderComponent;
   statsComponent?: StatsComponent[];
   questionsComponent?: QuestionsComponent;
