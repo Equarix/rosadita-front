@@ -4,6 +4,7 @@ import { env } from "@/config/env";
 import { ResponseApi, ResponseBlog } from "@/interface/api.interface";
 import { notFound } from "next/navigation";
 import { LuCircleUser } from "react-icons/lu";
+export const dynamic = "force-dynamic";
 
 export default async function DetailBlog({
   params,
