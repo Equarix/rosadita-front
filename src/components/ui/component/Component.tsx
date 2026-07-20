@@ -11,6 +11,10 @@ import TimeLine from "../time-line/TimeLine";
 import Quote from "../quote/Quote";
 import Editor from "../editor/Editor";
 import TextComponent from "../text-component/TextComponent";
+import HeaderComponent from "../header/HeaderComponent";
+import ImageCaptionComponent from "../image-caption/ImageCaptionComponent";
+import StatsComponent from "../stats/StatsComponent";
+import QuestionsComponent from "../questions/QuestionsComponent";
 
 export default function Component({ type, ...props }: ComponentType) {
   const ComponentMap: Record<ComponentEnum, ReactNode> = {
@@ -22,6 +26,10 @@ export default function Component({ type, ...props }: ComponentType) {
     CODE: <Editor {...props.codeComponent!} />,
     QUOTE: <Quote {...props.quoteComponent!} />,
     TEXT: <TextComponent {...props.textComponent!} />,
+    HEADER: <HeaderComponent {...props.headerComponent!} />,
+    IMAGE_CAPTION: <ImageCaptionComponent {...props.imageCaptionComponent!} />,
+    STATS: <StatsComponent items={props.statsComponent!} />,
+    QUESTIONS: <QuestionsComponent {...props.questionsComponent!} />,
     UNKNOWN: <div>Unknown Component Type</div>,
   };
 

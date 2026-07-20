@@ -5,15 +5,21 @@ import { HeaderLinks } from "./HeaderLinks";
 import { useResponsiveHeader } from "../header/useResponsiveHeader";
 import { useEffect, useState } from "react";
 
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 export default function Header() {
   const [isMounted, setIsMounted] = useState(false);
   const { open, toggleMenu } = useResponsiveHeader();
+  const pathname = usePathname();
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  if (pathname.startsWith("/proyectos/detalle/")) {
+    return null;
+  }
 
   return (
     <header className="sticky top-0 flex z-100000 w-full py-4 px-6 justify-between items-center border-b border-gray-200 bg-white">

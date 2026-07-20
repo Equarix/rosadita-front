@@ -46,7 +46,7 @@ export default async function DetailBlog({
         </aside>
         <section className="w-full h-full max-w-full flex flex-col gap-6">
           {blog.components.map((c, idx) => (
-            <Component key={idx} {...c} />
+            <Component key={idx.toString()} {...c} />
           ))}
         </section>
       </main>

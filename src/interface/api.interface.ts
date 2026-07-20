@@ -52,6 +52,52 @@ export interface ResponseImage {
   __v: number;
 }
 
+export interface ResponseCategoryProjects {
+  _id: string;
+  name: string;
+  description: string;
+  slug: string;
+  status: boolean;
+  color: string;
+  category_proyectId: number;
+  __v: number;
+}
+
+export interface ResponseProjects {
+  _id: string;
+  projectName: string;
+  projectSlug: string;
+  description: string;
+  user: string;
+  image: Image;
+  category: Category;
+  status: boolean;
+  isPage: boolean;
+  technologies: string[];
+  createdAt: string;
+  projectId: number;
+  components: Component[];
+  __v: number;
+}
+
+export interface Image {
+  _id: string;
+  url: string;
+  imageId: number;
+  __v: number;
+}
+
+export interface Category {
+  _id: string;
+  name: string;
+  description: string;
+  slug: string;
+  status: boolean;
+  color: string;
+  category_proyectId: number;
+  __v: number;
+}
+
 export type ColorType = "red" | "blue" | "green" | "yellow" | "purple";
 
 export type ImageType = "ROUNDED" | "CIRCLE" | "SQUARE";

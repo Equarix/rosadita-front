@@ -2,6 +2,11 @@ import { ColorType, ImageType } from "./api.interface";
 
 export interface Component {
   type: ComponentType;
+  key?: string;
+  headerComponent?: HeaderComponent;
+  statsComponent?: StatsComponent[];
+  questionsComponent?: QuestionsComponent;
+  imageCaptionComponent?: ImageCaptionComponent;
   heroComponent?: HeroComponent;
   imageComponent?: ImageComponent;
   codeComponent?: CodeComponent;
@@ -63,6 +68,58 @@ export interface QuoteComponent {
   userPosition: string;
 }
 
+export interface HeaderComponent {
+  proyectName: string;
+  proyectIcon: string;
+  isFixed: boolean;
+  buttons?: Button[];
+  items: Item[];
+}
+
+export interface Button {
+  name: string;
+  link?: string;
+  key: string;
+  isExternal: boolean;
+}
+
+export interface Item {
+  name: string;
+  key: string;
+}
+
+export interface StatsComponent {
+  text: string;
+  description: string;
+  color: string;
+  icon: string;
+  positionIcon: string;
+}
+
+export interface QuestionsComponent {
+  subHeading: string;
+  header: string;
+  questions: Question[];
+}
+
+export interface Question {
+  question: string;
+  answer: string;
+}
+
+export interface ImageCaptionComponent {
+  header: string;
+  description?: string;
+  subheading?: string;
+  images: Image[];
+}
+
+export interface Image {
+  url: string;
+  caption: string;
+  icon: string;
+}
+
 export type ComponentType =
   | "HERO"
   | "IMAGE"
@@ -72,16 +129,14 @@ export type ComponentType =
   | "DETAILS"
   | "QUOTE"
   | "TEXT"
+  | "IMAGE_CAPTION"
+  | "STATS"
+  | "QUESTIONS"
+  | "HEADER"
   | "UNKNOWN";
 
 export type LanguageType =
-  | "TYPESCRIPT"
-  | "PYTHON"
-  | "JAVA"
-  | "CSHARP"
-  | "REACT"
-  | "HTML"
-  | "SQL";
+  "TYPESCRIPT" | "PYTHON" | "JAVA" | "CSHARP" | "REACT" | "HTML" | "SQL";
 
 export interface TextComponent {
   content: JSONContent;
