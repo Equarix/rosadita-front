@@ -11,6 +11,7 @@ import { notFound } from "next/navigation";
 import CategoriesProjectSection from "@/modules/projects/components/CategoriesProjectSection";
 import ProjectSections from "@/modules/projects/sections/ProjectSections";
 import { Suspense } from "react";
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Casos de Éxito y Proyectos",

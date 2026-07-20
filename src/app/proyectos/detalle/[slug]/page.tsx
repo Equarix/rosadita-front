@@ -3,6 +3,7 @@ import { env } from "@/config/env";
 import { ResponseApi, ResponseProjects } from "@/interface/api.interface";
 import { notFound } from "next/navigation";
 
+export const dynamic = "force-dynamic";
 export default async function DetailProject({
   params,
 }: {
