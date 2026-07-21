@@ -5,10 +5,26 @@ import ContactSection from "@/modules/home/contact-section/ContactSection";
 import ProjectCard from "@/modules/project/components/ProjectCard";
 import { env } from "@/config/env";
 import { ResponseApi, ResponseProjects } from "@/interface/api.interface";
+import ClientMarquee from "@/modules/home/components/ClientMarquee";
+import { ClientResponse } from "@/interface/component.interface";
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
   let featuredProjects: ResponseProjects[] = [];
+  let clients: ClientResponse[] = [];
+
+  try {
+    const resClients = await fetch(
+      `${env.NEXT_PUBLIC_API_URL}/public/clients-public`,
+    );
+    if (resClients.ok) {
+      const dataClients = (await resClients.json()) as ResponseApi<ClientResponse[]>;
+      clients = dataClients.body || [];
+    }
+  } catch (error) {
+    console.error("Error fetching clients:", error);
+  }
+
   try {
     const res = await fetch(
       `${env.NEXT_PUBLIC_API_URL}/public/projects/home/featured`,
@@ -24,6 +40,7 @@ export default async function Home() {
   return (
     <div className="relative overflow-hidden bg-white">
       <HeroHome />
+      <ClientMarquee clients={clients} />
 
       <section className="flex flex-col items-center justify-center px-5 py-12">
         <h2 className="font-inter font-bold text-4xl py-3 text-center">

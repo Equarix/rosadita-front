@@ -179,3 +179,13 @@ export type JSONContent = {
   text?: string;
   [key: string]: unknown;
 };
+
+export interface ClientResponse {
+  _id: string;
+  name: string;
+  url: string;
+  feature: boolean;
+  clientId: number;
+  __v: number;
+  isActive: boolean;
+}
