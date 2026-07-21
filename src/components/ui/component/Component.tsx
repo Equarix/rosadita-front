@@ -16,6 +16,7 @@ import ImageCaptionComponent from "../image-caption/ImageCaptionComponent";
 import StatsComponent from "../stats/StatsComponent";
 import QuestionsComponent from "../questions/QuestionsComponent";
 import TestimonialsComponent from "../testimonials/TestimonialsComponent";
+import CarrouselComponent from "../carrousel/CarrouselComponent";
 
 export default function Component({ type, sectionId, ...props }: ComponentType & { sectionId?: string }) {
   const ComponentMap: Record<ComponentEnum, ReactNode> = {
@@ -32,6 +33,7 @@ export default function Component({ type, sectionId, ...props }: ComponentType &
     STATS: <StatsComponent items={props.statsComponent!} />,
     QUESTIONS: <QuestionsComponent {...props.questionsComponent!} />,
     TESTIMONIALS: <TestimonialsComponent {...props.testimonialsComponent!} />,
+    CARROUSEL: <CarrouselComponent {...props.carrouselComponent!} />,
     UNKNOWN: <div>Unknown Component Type</div>,
   };
 

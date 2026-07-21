@@ -17,6 +17,14 @@ export interface Component {
   quoteComponent?: QuoteComponent;
   textComponent?: TextComponent;
   testimonialsComponent?: TestimonialsComponent;
+  carrouselComponent?: CarrouselComponent;
+}
+
+export interface CarrouselComponent {
+  title: string;
+  subtitle: string;
+  description: string;
+  urls: string[];
 }
 
 export interface TestimonialsComponent {
@@ -149,6 +157,7 @@ export type ComponentType =
   | "QUESTIONS"
   | "HEADER"
   | "TESTIMONIALS"
+  | "CARROUSEL"
   | "UNKNOWN";
 
 export type LanguageType =
