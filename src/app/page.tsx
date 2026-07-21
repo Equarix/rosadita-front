@@ -1,10 +1,26 @@
 import ServiceCard from "@/modules/home/components/ServiceCard";
 import { serviceCards } from "@/modules/home/services";
 import HeroHome from "@/modules/home/hero/HeroHome";
-import Image from "next/image";
 import ContactSection from "@/modules/home/contact-section/ContactSection";
+import ProjectCard from "@/modules/project/components/ProjectCard";
+import { env } from "@/config/env";
+import { ResponseApi, ResponseProjects } from "@/interface/api.interface";
+export const dynamic = "force-dynamic";
 
-export default function Home() {
+export default async function Home() {
+  let featuredProjects: ResponseProjects[] = [];
+  try {
+    const res = await fetch(
+      `${env.NEXT_PUBLIC_API_URL}/public/projects/home/featured`,
+    );
+    if (res.ok) {
+      const data = (await res.json()) as ResponseApi<ResponseProjects[]>;
+      featuredProjects = data.body || [];
+    }
+  } catch (error) {
+    console.error("Error fetching featured projects:", error);
+  }
+
   return (
     <div className="relative overflow-hidden bg-white">
       <HeroHome />
@@ -36,96 +52,10 @@ export default function Home() {
           realidad.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mt-12">
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition ">
-            <div className="relative h-48">
-              <Image
-                src="/images/card1.jpg"
-                alt="Panel de finanzas globales - Plataforma de análisis Fintech"
-                className="w-full h-full object-cover"
-                width={400}
-                height={300}
-              />
-              <span className="absolute top-4 left-4 bg-blue-100 text-blue-600 text-xs font-semibold px-3 py-1 rounded-full">
-                FINTECH
-              </span>
-            </div>
-
-            <div className="p-6">
-              <h3 className="font-bold text-lg mb-2">
-                Panel de finanzas globales
-              </h3>
-              <p className="text-gray-500 text-sm mb-6">
-                Una plataforma de análisis integral para la visualización de
-                datos de mercado en tiempo real.
-              </p>
-              <div className="bg-gray-400 w-full h-0.5 rounded-full opacity-20"></div>
-              <button className="flex py-2 items-center gap-2 text-sm font-semibold text-gray-900 hover:text-blue-600 transition">
-                Ver proyecto
-                <span className="text-lg">→</span>
-              </button>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition ">
-            <div className="relative h-48">
-              <Image
-                src="/images/card2.jpg"
-                alt="App Móvil de Compra Fácil - Experiencia de E-commerce Retail"
-                className="w-full h-full object-cover"
-                width={400}
-                height={300}
-              />
-              <span className="absolute top-4 left-4 bg-blue-100 text-blue-600 text-xs font-semibold px-3 py-1 rounded-full">
-                RETAIL
-              </span>
-            </div>
-
-            <div className="p-6">
-              <h3 className="font-bold text-lg mb-2">
-                App Móvil de Compra Fácil
-              </h3>
-              <p className="text-gray-500 text-sm mb-6">
-                Una experiencia de compra fluida con recomendaciones impulsadas
-                por IA.
-              </p>
-              <div className="bg-gray-400 w-full h-0.5 rounded-full opacity-20"></div>
-              <button className="flex py-2 items-center gap-2 text-sm font-semibold text-gray-900 hover:text-blue-600 transition">
-                Ver proyecto
-                <span className="text-lg">→</span>
-              </button>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition ">
-            <div className="relative h-48">
-              <Image
-                src="/images/card3.jpg"
-                alt="Portal para pacientes de Medicare - Sistema Healthcare"
-                className="w-full h-full object-cover"
-                width={400}
-                height={300}
-              />
-              <span className="absolute top-4 left-4 bg-blue-100 text-blue-600 text-xs font-semibold px-3 py-1 rounded-full">
-                HEALTHCARE
-              </span>
-            </div>
-
-            <div className="p-6">
-              <h3 className="font-bold text-lg mb-2">
-                Portal para pacientes de Medicare
-              </h3>
-              <p className="text-gray-500 text-sm mb-6">
-                Sistema seguro de gestión de pacientes con capacidades de
-                telemedicina.
-              </p>
-              <div className="bg-gray-400 w-full h-0.5 rounded-full opacity-20"></div>
-              <button className="flex py-2 items-center gap-2 text-sm font-semibold text-gray-900 hover:text-blue-600 transition">
-                Ver proyecto
-                <span className="text-lg">→</span>
-              </button>
-            </div>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl mx-auto mt-12">
+          {featuredProjects.map((project) => (
+            <ProjectCard key={project._id} project={project} />
+          ))}
         </div>
       </section>
 
