@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { AnimatePresence, motion } from "motion/react";
 import { useForm } from "react-hook-form";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 export default function ContactHome() {
   const {
@@ -40,19 +41,24 @@ export default function ContactHome() {
       <AnimatePresence>
         {isSuccess && (
           <motion.div
-            initial={{ opacity: 0, scale: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0 }}
-            transition={{ ease: "easeInOut", duration: 0.5 }}
-            className="absolute inset-0 bg-green-100 flex items-center justify-center h-full w-full z-10"
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ ease: "easeOut", duration: 0.4 }}
+            className="absolute inset-0 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center h-full w-full z-20"
           >
-            <div className="text-center">
-              <h2 className="text-2xl font-bold text-green-800 mb-2">
+            <Player
+              autoplay
+              keepLastFrame
+              src="https://assets3.lottiefiles.com/packages/lf20_jbrw3hcz.json"
+              style={{ height: '200px', width: '200px' }}
+            />
+            <div className="text-center px-8 -mt-4">
+              <h2 className="text-3xl font-extrabold text-slate-800 mb-3 tracking-tight">
                 ¡Mensaje Enviado!
               </h2>
-              <p className="text-green-700">
-                Gracias por contactarnos. Nos pondremos en contacto contigo
-                pronto.
+              <p className="text-slate-500 font-medium">
+                Gracias por contactarnos. Nos pondremos en contacto contigo pronto.
               </p>
             </div>
           </motion.div>
