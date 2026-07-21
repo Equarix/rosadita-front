@@ -15,6 +15,7 @@ import HeaderComponent from "../header/HeaderComponent";
 import ImageCaptionComponent from "../image-caption/ImageCaptionComponent";
 import StatsComponent from "../stats/StatsComponent";
 import QuestionsComponent from "../questions/QuestionsComponent";
+import TestimonialsComponent from "../testimonials/TestimonialsComponent";
 
 export default function Component({ type, sectionId, ...props }: ComponentType & { sectionId?: string }) {
   const ComponentMap: Record<ComponentEnum, ReactNode> = {
@@ -30,6 +31,7 @@ export default function Component({ type, sectionId, ...props }: ComponentType &
     IMAGE_CAPTION: <ImageCaptionComponent {...props.imageCaptionComponent!} />,
     STATS: <StatsComponent items={props.statsComponent!} />,
     QUESTIONS: <QuestionsComponent {...props.questionsComponent!} />,
+    TESTIMONIALS: <TestimonialsComponent {...props.testimonialsComponent!} />,
     UNKNOWN: <div>Unknown Component Type</div>,
   };
 

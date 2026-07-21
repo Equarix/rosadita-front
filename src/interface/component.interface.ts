@@ -16,6 +16,20 @@ export interface Component {
   detailsComponent?: DetailsComponent[];
   quoteComponent?: QuoteComponent;
   textComponent?: TextComponent;
+  testimonialsComponent?: TestimonialsComponent;
+}
+
+export interface TestimonialsComponent {
+  title: string;
+  subtitle: string;
+  testimonials: Testimonial[];
+}
+
+export interface Testimonial {
+  starts: number;
+  description: string;
+  name: string;
+  position: string;
 }
 
 export interface HeroComponent {
@@ -134,6 +148,7 @@ export type ComponentType =
   | "STATS"
   | "QUESTIONS"
   | "HEADER"
+  | "TESTIMONIALS"
   | "UNKNOWN";
 
 export type LanguageType =
