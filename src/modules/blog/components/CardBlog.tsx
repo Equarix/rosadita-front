@@ -18,7 +18,7 @@ export default function CardBlog({ blog }: CardBlogProps) {
   const color = getColorCategory(blog.category.color);
 
   return (
-    <Link href={`/blog/detalle/${blog.blogSlug}`}>
+    <Link href={`/blog/detalle/${blog.blogSlug}`} className="block h-full">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -45,7 +45,7 @@ export default function CardBlog({ blog }: CardBlogProps) {
           </Chip>
         </header>
 
-        <section className="p-5 flex flex-col gap-2.5">
+        <section className="p-5 flex flex-col gap-2.5 flex-1">
           <header className="flex items-center text-[#64748B] text-xs gap-5.75">
             <span className="flex items-center gap-1">
               <LuCalendar />
