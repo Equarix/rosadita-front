@@ -91,10 +91,16 @@ export interface QuoteComponent {
   userPosition: string;
 }
 
+export enum TypeHeader {
+  TYPE_ONE = "type_one",
+  TYPE_TWO = "type_two",
+}
+
 export interface HeaderComponent {
   proyectName: string;
   proyectIcon: string;
   isFixed: boolean;
+  type?: TypeHeader | null;
   buttons?: Button[];
   items: Item[];
 }

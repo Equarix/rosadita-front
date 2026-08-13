@@ -9,7 +9,11 @@ import cx from "@/utils/cx";
 export default function TextComponent({ content }: TextComponentInterface) {
   if (!content) return null;
 
-  return <div className="text-gray-200">{renderNode(content)}</div>;
+  return (
+    <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6 text-gray-200">
+      {renderNode(content)}
+    </div>
+  );
 }
 
 const renderNode = (node: JSONContent): ReactNode => {

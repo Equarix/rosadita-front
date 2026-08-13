@@ -45,9 +45,11 @@ export default function Hero({
           </h1>
           <p className="py-6 text-gray-500 text-lg">{description}</p>
           <div className="py-4 flex gap-4">
-            <Button>{buttonLive}</Button>
+            {buttonLive.length != 0 && <Button>{buttonLive}</Button>}
 
-            <Button variant="secondary">{buttonDemo}</Button>
+            {buttonDemo.length != 0 && (
+              <Button variant="secondary">{buttonDemo}</Button>
+            )}
           </div>
         </div>
         <div className="relative w-full lg:min-w-120 h-75 rounded-2xl overflow-hidden hover:shadow-2xl transition ">
