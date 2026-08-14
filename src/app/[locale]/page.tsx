@@ -57,7 +57,12 @@ export default async function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 transition max-w-7xl mx-auto">
           {serviceCards.map((card, index) => (
-            <ServiceCard key={index} {...card} />
+            <ServiceCard
+              key={index}
+              icon={card.icon}
+              title={t(`services.items.${card.key}.title`)}
+              description={t(`services.items.${card.key}.description`)}
+            />
           ))}
         </div>
       </section>

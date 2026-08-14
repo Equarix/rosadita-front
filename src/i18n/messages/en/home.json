@@ -21,12 +21,60 @@
       "reviews": "+200 reviews"
     }
   },
+  "clients": {
+    "title": "They trust us"
+  },
   "services": {
     "title": "Our Services",
-    "description": "We offer comprehensive development services to help you stay ahead in a constantly evolving digital environment."
+    "description": "We offer comprehensive development services to help you stay ahead in a constantly evolving digital environment.",
+    "items": {
+      "web": {
+        "title": "Web Development",
+        "description": "Scalable and modern web applications tailored to your business."
+      },
+      "mobile": {
+        "title": "Mobile Apps",
+        "description": "Native and cross-platform mobile solutions for iOS and Android with Flutter and React Native."
+      },
+      "cloud": {
+        "title": "Cloud Infrastructure",
+        "description": "Scalable and secure cloud architecture using AWS and Azure to ensure your applications are always available."
+      },
+      "devops": {
+        "title": "DevOps & CI/CD",
+        "description": "Automated pipelines and containerization to optimize the development and deployment process."
+      },
+      "security": {
+        "title": "Cybersecurity",
+        "description": "Implementing robust security measures to protect your data and ensure compliance with industry standards."
+      },
+      "data": {
+        "title": "Data Analytics",
+        "description": "We transform raw data into actionable insights through custom dashboards and business intelligence solutions."
+      }
+    }
   },
   "portfolio": {
     "title": "Featured Portfolio",
     "description": "See how we have helped companies transform their ideas into reality."
+  },
+  "contactSection": {
+    "badge": "Get in touch",
+    "title": "Let's build something great together.",
+    "description": "If you have any questions about our services, pricing, or simply want to talk about your next project, our team is ready to answer all your questions.",
+    "emailLabel": "Our Email",
+    "phoneLabel": "Call us",
+    "addressLabel": "Visit us",
+    "addressValue": "123 Main Street, City, Country"
+  },
+  "contactForm": {
+    "fullName": "Full Name",
+    "email": "Email",
+    "subject": "Subject",
+    "phone": "Phone",
+    "message": "Message",
+    "submit": "Send Message",
+    "successTitle": "Message Sent!",
+    "successMessage": "Thank you for contacting us. We will get in touch with you soon."
   }
 }

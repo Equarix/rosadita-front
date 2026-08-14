@@ -2,12 +2,15 @@
 
 import Marquee from "react-fast-marquee";
 import { ClientResponse } from "@/interface/component.interface";
+import { useTranslations } from "next-intl";
 
 interface ClientMarqueeProps {
   clients: ClientResponse[];
 }
 
 export default function ClientMarquee({ clients }: ClientMarqueeProps) {
+  const t = useTranslations("home.clients");
+
   if (!clients || clients.length === 0) return null;
 
   const activeClients = clients.filter((client) => client.isActive);
@@ -18,7 +21,7 @@ export default function ClientMarquee({ clients }: ClientMarqueeProps) {
     <div className="w-full py-2 bg-white border-b border-gray-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 mb-6">
         <p className="text-center text-sm font-semibold text-gray-400 uppercase tracking-wider">
-          Confían en nosotros
+          {t("title")}
         </p>
       </div>
       <Marquee

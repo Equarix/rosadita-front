@@ -21,12 +21,60 @@
       "reviews": "+200 reseñas"
     }
   },
+  "clients": {
+    "title": "Confían en nosotros"
+  },
   "services": {
     "title": "Nuestros Servicios",
-    "description": "Ofrecemos servicios de desarrollo integral para ayudarte a mantener la ventaja en un entorno digital en constante evolución."
+    "description": "Ofrecemos servicios de desarrollo integral para ayudarte a mantener la ventaja en un entorno digital en constante evolución.",
+    "items": {
+      "web": {
+        "title": "Desarrollo Web",
+        "description": "Aplicaciones web escalables y modernas adaptadas a su negocio."
+      },
+      "mobile": {
+        "title": "Apps Móviles",
+        "description": "Soluciones móviles nativas y multiplataforma para iOS y Android con Flutter y React Native."
+      },
+      "cloud": {
+        "title": "Infraestructura en la Nube",
+        "description": "Arquitectura de nube escalable y segura que utiliza AWS y Azure para garantizar que sus aplicaciones estén siempre disponibles."
+      },
+      "devops": {
+        "title": "DevOps & CI/CD",
+        "description": "Canalizaciones automatizadas y contenedorización para optimizar el proceso de desarrollo e implementación."
+      },
+      "security": {
+        "title": "Ciberseguridad",
+        "description": "Implementando sólidas medidas de seguridad para proteger sus datos y garantizar el cumplimiento de los estándares de la industria."
+      },
+      "data": {
+        "title": "Análisis de Datos",
+        "description": "Transformamos datos sin procesar en información útil mediante paneles de control personalizados y soluciones de inteligencia empresarial."
+      }
+    }
   },
   "portfolio": {
     "title": "Portafolio Seleccionado",
     "description": "Vea cómo hemos ayudado a las empresas a transformar sus ideas en realidad."
+  },
+  "contactSection": {
+    "badge": "Ponte en contacto",
+    "title": "Construyamos algo grande juntos.",
+    "description": "Si tiene alguna pregunta sobre nuestros servicios, precios o simplemente desea hablar sobre su próximo proyecto, nuestro equipo está listo para responder todas sus preguntas.",
+    "emailLabel": "Nuestro Email",
+    "phoneLabel": "Llámanos",
+    "addressLabel": "Visítanos",
+    "addressValue": "123 Calle Principal, Ciudad, País"
+  },
+  "contactForm": {
+    "fullName": "Nombre Completo",
+    "email": "Email",
+    "subject": "Asunto",
+    "phone": "Teléfono",
+    "message": "Mensaje",
+    "submit": "Enviar Mensaje",
+    "successTitle": "¡Mensaje Enviado!",
+    "successMessage": "Gracias por contactarnos. Nos pondremos en contacto contigo pronto."
   }
 }

@@ -7,6 +7,7 @@ import { useMutation } from "@tanstack/react-query";
 import { AnimatePresence, motion } from "motion/react";
 import { useForm } from "react-hook-form";
 import dynamic from "next/dynamic";
+import { useTranslations } from "next-intl";
 
 const Player = dynamic(
   () => import("@lottiefiles/react-lottie-player").then((mod) => mod.Player),
@@ -14,6 +15,8 @@ const Player = dynamic(
 );
 
 export default function ContactHome() {
+  const t = useTranslations("home.contactForm");
+
   const {
     register,
     formState: { errors },
@@ -60,10 +63,10 @@ export default function ContactHome() {
             />
             <div className="text-center px-8 -mt-4">
               <h2 className="text-3xl font-extrabold text-slate-800 mb-3 tracking-tight">
-                ¡Mensaje Enviado!
+                {t("successTitle")}
               </h2>
               <p className="text-slate-500 font-medium">
-                Gracias por contactarnos. Nos pondremos en contacto contigo pronto.
+                {t("successMessage")}
               </p>
             </div>
           </motion.div>
@@ -73,34 +76,34 @@ export default function ContactHome() {
       <span className="block bg-[#137FEC]/5 size-32 rounded-full -top-10 -right-10 absolute" />
 
       <Input
-        label="Nombre Completo"
+        label={t("fullName")}
         {...register("fullName")}
         error={errors.fullName?.message}
       />
       <Input
-        label="Email"
+        label={t("email")}
         {...register("email")}
         error={errors.email?.message}
       />
       <Input
-        label="Asunto"
+        label={t("subject")}
         {...register("assunto")}
         error={errors.assunto?.message}
       />
       <Input
-        label="Telefono"
+        label={t("phone")}
         {...register("phone")}
         error={errors.phone?.message}
       />
       <div className="col-span-2">
-        <h1 className="font-medium">Mensaje</h1>
+        <h1 className="font-medium">{t("message")}</h1>
         <textarea
           className="w-full border border-gray-300 rounded-md p-2 mt-2 mb-4 h-60 placeholder:text-sm text-gray-800"
           {...register("message")}
         ></textarea>
       </div>
       <button className="bg-blue-600 w-full items-center col-span-2 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
-        Enviar Mensaje
+        {t("submit")}
       </button>
     </form>
   );
