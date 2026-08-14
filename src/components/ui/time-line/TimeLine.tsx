@@ -1,9 +1,7 @@
 "use client";
-import { useWidth } from "@/hooks/useWidth";
 import { TimeLineComponent } from "@/interface/component.interface";
 import cx from "@/utils/cx";
 import { getColorClass } from "@/utils/getColor";
-import { useState } from "react";
 import * as ReactIcons from "react-icons/lu";
 
 interface TimeLineProps {
@@ -11,51 +9,48 @@ interface TimeLineProps {
 }
 
 export default function TimeLine({ items }: TimeLineProps) {
-  const width = useWidth();
-  const [itemSelected, setItemSelected] = useState({
-    isOpen: false,
-    item: null as TimeLineComponent | null,
-  });
-
   return (
-    <main className="w-full flex flex-col items-center justify-center py-36">
+    <main className="w-full flex flex-col items-center justify-center py-12 sm:py-24 px-4 overflow-x-hidden">
       {items.map((i, idx) => {
         const index = idx + 1;
         const isLeft = i.position.toLowerCase() === "left";
         const isLast = index === items.length;
-        const Icon = ReactIcons[i.icon as keyof typeof ReactIcons];
+        const IconComponent = ReactIcons[i.icon as keyof typeof ReactIcons];
+        const Icon = IconComponent || ReactIcons.LuDot;
 
         return (
-          <div key={idx} className="flex items-center flex-col">
+          <div key={idx} className="flex flex-col items-center relative w-full max-w-sm sm:max-w-none">
+            {/* Icon circle */}
             <article
               className={cx(
-                "px-5.5 py-4.5 rounded-2xl relative",
-                getColorClass(i.color),
+                "p-4 sm:px-5.5 sm:py-4.5 rounded-2xl relative z-10 shadow-md flex items-center justify-center shrink-0",
+                getColorClass(i.color)
               )}
-              onClick={() => {
-                if (width >= 640) return;
-
-                setItemSelected((prev) => ({
-                  isOpen: !prev.isOpen || prev.item !== i,
-                  item: i,
-                }));
-              }}
             >
-              <Icon className="text-white size-9" />
-
-              <section
-                className={cx(
-                  "absolute bg-white border hidden sm:block border-gray-100 shadow-lg rounded-3xl min-w-2xs lg:min-w-sm top-1/2 -translate-y-1/2 p-8",
-                  isLeft
-                    ? "left-full sm:translate-x-12 lg:translate-x-32"
-                    : "right-full sm:-translate-x-12 lg:-translate-x-32 text-end",
-                )}
-              >
-                <h3 className="font-semibold text-lg mb-2">{i.title}</h3>
-                <p>{i.description}</p>
-              </section>
+              <Icon className="text-white size-7 sm:size-9" />
             </article>
-            {!isLast && <span className="h-52 w-0.5 bg-blue-500"></span>}
+
+            {/* Details section - always visible on mobile, alternating on desktop */}
+            <section
+              className={cx(
+                "bg-white border border-gray-100 shadow-lg rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 w-full sm:w-80 lg:w-96 mt-4 sm:mt-0 sm:absolute sm:top-1/2 sm:-translate-y-1/2 z-20 text-center sm:text-left transition-all duration-300",
+                isLeft
+                  ? "sm:right-1/2 sm:mr-14 lg:mr-20 sm:text-end"
+                  : "sm:left-1/2 sm:ml-14 lg:ml-20 sm:text-start"
+              )}
+            >
+              <h3 className="font-semibold text-base sm:text-lg text-gray-900 mb-2">
+                {i.title}
+              </h3>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                {i.description}
+              </p>
+            </section>
+
+            {/* Vertical connector line */}
+            {!isLast && (
+              <span className="h-28 sm:h-44 w-0.5 bg-gradient-to-b from-blue-500 to-indigo-500 my-2 sm:my-0"></span>
+            )}
           </div>
         );
       })}
