@@ -27,5 +27,16 @@
     "contact": {
       "title": "Contacto"
     }
+  },
+  "notFound": {
+    "badge": "Error 404",
+    "searching": "Buscando...",
+    "noResults": "Sin resultados",
+    "routeLost": "Ruta perdida",
+    "pageNotExist": "La página no existe",
+    "title": "Página no encontrada",
+    "description": "La página que buscas se ha movido, eliminado o nunca existió. Pero no te preocupes, te ayudamos a volver.",
+    "backToHome": "Volver al inicio",
+    "goBack": "Regresar atrás"
   }
 }
