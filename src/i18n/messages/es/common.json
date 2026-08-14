@@ -1,0 +1,13 @@
+{
+  "header": {
+    "nav": {
+      "home": "Inicio",
+      "projects": "Proyectos",
+      "services": "Servicios",
+      "blog": "Blog",
+      "contact": "Contacto"
+    },
+    "quoteButton": "Cotizar Servicio",
+    "openMenu": "Abrir menú de navegación"
+  }
+}

@@ -7,9 +7,13 @@ import { env } from "@/config/env";
 import { ResponseApi, ResponseProjects } from "@/interface/api.interface";
 import ClientMarquee from "@/modules/home/components/ClientMarquee";
 import { ClientResponse } from "@/interface/component.interface";
+import { getTranslations } from "next-intl/server";
+
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
+  const t = await getTranslations("home");
+
   let featuredProjects: ResponseProjects[] = [];
   let clients: ClientResponse[] = [];
 
@@ -44,12 +48,11 @@ export default async function Home() {
 
       <section className="flex flex-col items-center justify-center px-5 py-12">
         <h2 className="font-inter font-bold text-4xl py-3 text-center">
-          Nuestros Servicios
+          {t("services.title")}
         </h2>
         <div className="rounded-2xl w-24 h-1.5 bg-blue-600 mb-6"></div>
         <p className="py-5 text-gray-500 max-w-150 text-center text-lg">
-          Ofrecemos servicios de desarrollo integral para ayudarte a mantener la
-          ventaja en un entorno digital en constante evolución.
+          {t("services.description")}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 transition max-w-7xl mx-auto">
@@ -61,12 +64,11 @@ export default async function Home() {
 
       <section className="flex flex-col w-full items-center justify-center py-14 px-5 bg-gray-50/50">
         <h2 className="font-inter font-bold text-center text-4xl py-3">
-          Portafolio Seleccionado
+          {t("portfolio.title")}
         </h2>
         <div className="rounded-2xl w-24 h-1.5 bg-blue-600 mb-8"></div>
         <p className="py-5 text-gray-500 max-w-150 text-center text-lg">
-          Vea cómo hemos ayudado a las empresas a transformar sus ideas en
-          realidad.
+          {t("portfolio.description")}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl mx-auto mt-12">
@@ -82,3 +84,4 @@ export default async function Home() {
     </div>
   );
 }
+

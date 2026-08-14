@@ -10,7 +10,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   }
 
 
-  const files = ["contact", "common"];
+  const files = ["contact", "common", "home"];
 
   const messagesEntries = await Promise.all(
     files.map(async (file) => {

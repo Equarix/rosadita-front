@@ -1,18 +1,19 @@
 "use client";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import cx from "@/utils/cx";
-
-const navLinks = [
-  { href: "/", label: "Inicio" },
-  { href: "/proyectos", label: "Proyectos" },
-  { href: "/servicios", label: "Servicios" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contacto", label: "Contacto" },
-];
 
 export function HeaderLinks({ vertical = false }) {
   const pathname = usePathname();
+  const t = useTranslations("common.header.nav");
+
+  const navLinks = [
+    { href: "/", label: t("home") },
+    { href: "/proyectos", label: t("projects") },
+    { href: "/servicios", label: t("services") },
+    { href: "/blog", label: t("blog") },
+    { href: "/contacto", label: t("contact") },
+  ] as const;
 
   return (
     <nav
@@ -36,3 +37,4 @@ export function HeaderLinks({ vertical = false }) {
     </nav>
   );
 }
+

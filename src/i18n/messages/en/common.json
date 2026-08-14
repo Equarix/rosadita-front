@@ -1,0 +1,13 @@
+{
+  "header": {
+    "nav": {
+      "home": "Home",
+      "projects": "Projects",
+      "services": "Services",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "quoteButton": "Get a Quote",
+    "openMenu": "Open navigation menu"
+  }
+}

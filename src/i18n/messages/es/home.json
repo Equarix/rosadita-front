@@ -1,0 +1,10 @@
+{
+  "services": {
+    "title": "Nuestros Servicios",
+    "description": "Ofrecemos servicios de desarrollo integral para ayudarte a mantener la ventaja en un entorno digital en constante evolución."
+  },
+  "portfolio": {
+    "title": "Portafolio Seleccionado",
+    "description": "Vea cómo hemos ayudado a las empresas a transformar sus ideas en realidad."
+  }
+}
