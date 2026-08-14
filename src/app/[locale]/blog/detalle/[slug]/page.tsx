@@ -3,8 +3,7 @@ import HeroBlog from "@/components/ui/hero-blog/HeroBlog";
 import { env } from "@/config/env";
 import { ResponseApi, ResponseBlog } from "@/interface/api.interface";
 import { notFound } from "next/navigation";
-import { LuCircleUser, LuArrowLeft } from "react-icons/lu";
-import { Link } from "@/i18n/navigation";
+import { LuCircleUser } from "react-icons/lu";
 
 export const dynamic = "force-dynamic";
 
@@ -44,16 +43,7 @@ export default async function DetailBlog({
         <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.035] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
       </div>
 
-      {/* Botón flotante Glassmorphism para volver al Blog */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-6">
-        <Link
-          href="/blog"
-          className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-gray-700 hover:text-blue-600 bg-white/70 hover:bg-white backdrop-blur-md rounded-full border border-gray-200/80 shadow-xs hover:shadow-md transition-all group duration-200"
-        >
-          <LuArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" />
-          <span>Volver al Blog</span>
-        </Link>
-      </div>
+
 
       <main className="relative z-10 w-full h-full flex flex-col items-center justify-center">
         <HeroBlog

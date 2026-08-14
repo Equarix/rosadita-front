@@ -2,9 +2,6 @@ import Component from "@/components/ui/component/Component";
 import { env } from "@/config/env";
 import { ResponseApi, ResponseProjects } from "@/interface/api.interface";
 import { notFound } from "next/navigation";
-import { Link } from "@/i18n/navigation";
-import { LuArrowLeft } from "react-icons/lu";
-
 export const dynamic = "force-dynamic";
 
 export default async function DetailProject({
@@ -34,16 +31,6 @@ export default async function DetailProject({
         <div className="absolute -bottom-40 -right-20 w-[600px] h-[600px] rounded-full bg-gradient-to-tl from-purple-400/15 via-blue-400/15 to-emerald-400/15 blur-[140px]" />
 
         <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.035] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-6">
-        <Link
-          href="/proyectos"
-          className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-gray-700 hover:text-blue-600 bg-white/70 hover:bg-white backdrop-blur-md rounded-full border border-gray-200/80 shadow-xs hover:shadow-md transition-all group duration-200"
-        >
-          <LuArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" />
-          <span>Volver a Proyectos</span>
-        </Link>
       </div>
 
       {/* Contenido principal del Proyecto */}
