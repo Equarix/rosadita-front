@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "title": "Nuestros Servicios",
+    "description": "Descubre nuestra amplia gama de servicios de desarrollo de software: desarrollo web personalizado, aplicaciones móviles iOS y Android, consultoría tecnológica y transformación digital.",
+    "keywords": "servicios desarrollo web, desarrollo apps móviles, consultoría it, software a medida, cloud computing, diseño ux ui",
+    "ogTitle": "Servicios de Desarrollo de Software | Equarix",
+    "ogDescription": "Soluciones tecnológicas integrales para impulsar tu negocio al siguiente nivel."
+  },
+  "hero": {
+    "badge": "EXCELENCIA TECNOLÓGICA",
+    "titleLine1": "Soluciones",
+    "titleHighlight": "Exclusivas",
+    "description": "Ingeniería de software de precisión diseñada para transformar modelos de negocio. Profundizamos en cada desafío para entregar resultados que escalan."
+  },
+  "items": {
+    "web": {
+      "title": "Desarrollo Web de Alto Impacto",
+      "description": [
+        "Creamos ecosistemas digitales que combinan un diseño visual impactante con una arquitectura técnica robusta. No solo construimos sitios web, desarrollamos aplicaciones web progresivas (PWA) y Single Page Applications (SPA) diseñadas para la velocidad y la conversión.",
+        "Nuestro enfoque \"mobile-first\" y el cumplimiento estricto de estándares de accesibilidad garantizan que tu producto llegue a cada usuario, en cualquier dispositivo, sin fricción."
+      ],
+      "featuresTitle": "Características Clave",
+      "features": {
+        "headless": {
+          "title": "Arquitectura Headless",
+          "description": "Desacople total para máxima flexibilidad de contenido."
+        },
+        "seo": {
+          "title": "SEO Técnico Avanzado",
+          "description": "Optimización Core Web Vitals para ranking superior."
+        },
+        "frontend": {
+          "title": "Frontend Reactivo",
+          "description": "React, Vue o Angular para interfaces dinámicas."
+        },
+        "api": {
+          "title": "Integración API",
+          "description": "Conexión fluida con CRMs, ERPs y pasarelas de pago."
+        }
+      }
+    },
+    "mobile": {
+      "title": "Aplicaciones Móviles Nativas",
+      "description": [
+        "Lleva tu negocio al bolsillo de tus clientes con aplicaciones móviles que deleitan. Nos especializamos en crear experiencias fluidas que aprovechan al máximo el hardware de los dispositivos modernos.",
+        "Desde el concepto hasta la publicación en App Store y Google Play, gestionamos todo el ciclo de vida del producto móvil, asegurando rendimiento nativo y una UX intuitiva."
+      ],
+      "featuresTitle": "Tecnologías y Beneficios",
+      "features": {
+        "native": {
+          "title": "Desarrollo Nativo",
+          "description": "Swift (iOS) y Kotlin (Android) para máximo rendimiento."
+        },
+        "crossPlatform": {
+          "title": "Multiplataforma",
+          "description": "React Native y Flutter para reducir tiempo de mercado."
+        },
+        "design": {
+          "title": "Diseño UI/UX",
+          "description": "Interfaces centradas en el usuario y accesibles."
+        },
+        "offline": {
+          "title": "Offline First",
+          "description": "Funcionalidad garantizada incluso sin conexión a internet."
+        }
+      }
+    },
+    "cloud": {
+      "title": "Arquitectura Cloud & DevOps",
+      "description": [
+        "Moderniza tu infraestructura y acelera tus ciclos de entrega. Diseñamos arquitecturas en la nube resilientes y automatizamos tus operaciones de TI para que tu equipo pueda centrarse en innovar, no en apagar fuegos.",
+        "Desde migraciones complejas hasta la implementación de cultura DevOps, garantizamos sistemas de alta disponibilidad y seguridad robusta."
+      ],
+      "featuresTitle": "Soluciones de Infraestructura",
+      "features": {
+        "migration": {
+          "title": "Cloud Migration",
+          "description": "Transición segura a AWS, Azure o Google Cloud."
+        },
+        "serverless": {
+          "title": "Serverless Computing",
+          "description": "Arquitecturas basadas en eventos que reducen costos."
+        },
+        "cicd": {
+          "title": "CI/CD Pipelines",
+          "description": "Integración y despliegue continuo automatizado."
+        },
+        "docker": {
+          "title": "Docker & Kubernetes",
+          "description": "Orquestación de contenedores a escala empresarial."
+        }
+      }
+    },
+    "data": {
+      "title": "Inteligencia de Datos e IA",
+      "description": [
+        "Convierte el caos de datos en una ventaja competitiva clara. Diseñamos pipelines de datos y modelos de Machine Learning que descubren patrones ocultos y predicen tendencias futuras.",
+        "Empoderamos a tu organización para tomar decisiones basadas en evidencia, no en intuición, mediante visualizaciones claras y potentes."
+      ],
+      "featuresTitle": "Capacidades Analíticas",
+      "features": {
+        "bi": {
+          "title": "Business Intelligence",
+          "description": "Dashboards interactivos (PowerBI, Tableau) para KPIs."
+        },
+        "ml": {
+          "title": "Machine Learning",
+          "description": "Modelos predictivos y algoritmos de recomendación."
+        },
+        "bigData": {
+          "title": "Big Data Pipelines",
+          "description": "Procesamiento ETL de grandes volúmenes de datos."
+        },
+        "warehouse": {
+          "title": "Data Warehousing",
+          "description": "Almacenamiento centralizado y optimizado para análisis."
+        }
+      }
+    }
+  }
+}
