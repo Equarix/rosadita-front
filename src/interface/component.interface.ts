@@ -18,6 +18,34 @@ export interface Component {
   textComponent?: TextComponent;
   testimonialsComponent?: TestimonialsComponent;
   carrouselComponent?: CarrouselComponent;
+  tableComponent?: TableComponent;
+}
+
+export type TableColumnType =
+  | 'text'
+  | 'number'
+  | 'currency'
+  | 'date'
+  | 'boolean'
+  | 'image'
+  | 'link';
+
+export interface TableColumn {
+  id: string;
+  label: string;
+  type: TableColumnType;
+  autoWidth?: boolean;
+}
+
+export interface TableRow {
+  values: Record<string, unknown>;
+}
+
+export interface TableComponent {
+  name: string;
+  description?: string;
+  columns: TableColumn[];
+  rows: TableRow[];
 }
 
 export interface CarrouselComponent {
@@ -164,6 +192,7 @@ export type ComponentType =
   | "HEADER"
   | "TESTIMONIALS"
   | "CARROUSEL"
+  | "TABLE"
   | "UNKNOWN";
 
 export type LanguageType =
