@@ -8,6 +8,7 @@ import QueryProvider from "@/context/QueryProvider";
 import { Analytics } from "@vercel/analytics/next";
 import StructuredData from "@/components/seo/StructuredData";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { NextIntlClientProvider } from "next-intl";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -96,18 +97,20 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased font-inter content overflow-x-hidden flex flex-col`}
       >
-        <QueryProvider>
-          <StructuredData />
-          <Header />
-          <main className="flex flex-col h-full overflow-x-hidden">
-            {children}
-          </main>
-          <Footer />
-          <Toaster richColors position="top-right" />
-          <Analytics />
-          <GoogleAnalytics gaId="G-GM7MZ5C5TW" />
-          <GoogleTagManager gtmId="G-GM7MZ5C5TW" />
-        </QueryProvider>
+        <NextIntlClientProvider>
+          <QueryProvider>
+            <StructuredData />
+            <Header />
+            <main className="flex flex-col h-full overflow-x-hidden">
+              {children}
+            </main>
+            <Footer />
+            <Toaster richColors position="top-right" />
+            <Analytics />
+            <GoogleAnalytics gaId="G-GM7MZ5C5TW" />
+            <GoogleTagManager gtmId="G-GM7MZ5C5TW" />
+          </QueryProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
