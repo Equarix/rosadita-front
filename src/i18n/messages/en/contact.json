@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "title": "Contact | Let's Talk About Your Project",
+    "description": "Have an idea or project in mind? Get in touch with the Equarix team. We offer free consulting and custom quotes for software development.",
+    "keywords": "equarix contact, web development quote, software agency contact, free tech consulting",
+    "ogTitle": "Contact | Equarix - Digital Solutions",
+    "ogDescription": "We are ready to transform your business with cutting-edge technology. The first step is a simple conversation."
+  },
+  "hero": {
+    "badge": "Have an idea?",
+    "title": "Let's talk about your next project.",
+    "description": "We are ready to transform your business with cutting-edge technology. The first step is a simple conversation."
+  },
+  "form": {
+    "title": "Contact Form",
+    "subtitle": "Fill in your details and we will get back to you in less than 24 hours.",
+    "fullName": "Full Name",
+    "email": "Email",
+    "subject": "Subject",
+    "phone": "Phone",
+    "message": "Message",
+    "submit": "Send Message",
+    "successToast": "Message sent successfully! We will get in touch with you soon.",
+    "errorToast": "There was an error sending your message. Please try again later."
+  },
+  "footer": {
+    "response24h": "Response within 24 hours",
+    "secureData": "Secure Data"
+  }
+}
