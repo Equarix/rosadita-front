@@ -9,5 +9,23 @@
     },
     "quoteButton": "Cotizar Servicio",
     "openMenu": "Abrir menú de navegación"
+  },
+  "footer": {
+    "description": "Impulsamos a las empresas con soluciones de software de vanguardia. Construimos el futuro digital, paso a paso.",
+    "services": {
+      "title": "Servicios",
+      "web": "Desarrollo Web",
+      "mobile": "Apps Móviles",
+      "consulting": "Consultoría TI"
+    },
+    "company": {
+      "title": "Compañía",
+      "projects": "Proyectos",
+      "blog": "Blog",
+      "contact": "Contacto"
+    },
+    "contact": {
+      "title": "Contacto"
+    }
   }
 }

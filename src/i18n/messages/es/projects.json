@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Casos de Éxito y Proyectos",
+    "description": "Explora nuestro portafolio de proyectos exitosos. Desde aplicaciones fintech hasta plataformas retail, descubre cómo hemos ayudado a empresas a transformar sus ideas en realidades digitales de alto impacto.",
+    "keywords": "portafolio desarrollo software, casos de éxito tecnología, proyectos web, ejemplos aplicaciones móviles, transformación digital casos",
+    "ogTitle": "Portafolio de Innovación Digital | Equarix",
+    "ogDescription": "Vea cómo ayudamos a las empresas a transformar sus ideas en realidad."
+  },
+  "loadingCategories": "Cargando categorías...",
+  "loadingProjects": "Cargando proyectos...",
+  "hero": {
+    "titleLine1": "Nuestros",
+    "titleHighlight": "Proyectos",
+    "description": "Explora cómo hemos transformado ideas complejas en soluciones digitales exitosas. Desde plataformas web escalables hasta aplicaciones móviles intuitivas para clientes globales.",
+    "stat1Label": "PROYECTOS",
+    "stat2Label": "SATISFACCIÓN",
+    "stat3Label": "PAÍSES"
+  },
+  "footer": {
+    "badge": "INNOVACIÓN CONTINUA",
+    "titleLine1": "¿Tienes un proyecto en mente?",
+    "titleHighlight": "Hagámoslo realidad.",
+    "description": "Nuestro equipo está listo para ayudarte a convertir tu visión abstracta en una realidad digital de alto impacto. Diseño, estrategia y tecnología en un solo lugar.",
+    "ctaPrimary": "Iniciar Proyecto Hoy",
+    "ctaSecondary": "Contactar Expertos ↗"
+  }
+}

@@ -9,5 +9,23 @@
     },
     "quoteButton": "Get a Quote",
     "openMenu": "Open navigation menu"
+  },
+  "footer": {
+    "description": "Empowering companies with cutting-edge software solutions. Building the digital future, step by step.",
+    "services": {
+      "title": "Services",
+      "web": "Web Development",
+      "mobile": "Mobile Apps",
+      "consulting": "IT Consulting"
+    },
+    "company": {
+      "title": "Company",
+      "projects": "Projects",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "contact": {
+      "title": "Contact"
+    }
   }
 }
