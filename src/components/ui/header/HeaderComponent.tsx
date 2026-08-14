@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import {
   HeaderComponent as IHeaderComponent,
   TypeHeader,
@@ -19,19 +18,6 @@ export default function HeaderComponent({
   buttons,
 }: IHeaderComponent) {
   const headerType = type || TypeHeader.TYPE_ONE;
-  const [isAtTop, setIsAtTop] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsAtTop(window.scrollY < 20);
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const isTypeTwoAtTop = headerType === TypeHeader.TYPE_TWO && isAtTop;
 
   return (
     <>
@@ -41,9 +27,7 @@ export default function HeaderComponent({
           "w-full z-50 transition-all duration-300",
           isFixed ? "fixed top-0 left-0 right-0" : "relative",
           headerType === TypeHeader.TYPE_TWO
-            ? isTypeTwoAtTop
-              ? "py-0 px-0 bg-white shadow-sm border-b border-gray-200/80"
-              : "py-4 px-4 sm:px-6 lg:px-8"
+            ? "py-4 px-4 sm:px-6 lg:px-8"
             : "bg-white shadow-sm",
         )}
       >
@@ -51,9 +35,7 @@ export default function HeaderComponent({
           className={clsx(
             "mx-auto transition-all duration-300",
             headerType === TypeHeader.TYPE_TWO
-              ? isTypeTwoAtTop
-                ? "max-w-[1400px] bg-white rounded-none border-none shadow-none px-4 sm:px-6 lg:px-8"
-                : "max-w-fit bg-white/90 backdrop-blur-md rounded-full border border-gray-200/80 shadow-md px-4 sm:px-6"
+              ? "max-w-fit bg-white/90 backdrop-blur-md rounded-full border border-gray-200/80 shadow-md px-4 sm:px-6"
               : "max-w-[1400px] px-4 sm:px-6 lg:px-8",
           )}
         >
