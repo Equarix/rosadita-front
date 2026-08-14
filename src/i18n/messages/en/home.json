@@ -1,4 +1,26 @@
 {
+  "hero": {
+    "badge": "SOFTWARE DEVELOPMENT AGENCY",
+    "titleLine1": "Building the",
+    "titleHighlight1": "future",
+    "titleLine2": "of Digital",
+    "titleHighlight2": "Business",
+    "titleHighlight3": "",
+    "description": "Custom software development tailored to your business scalability. We turn complex problems into elegant and scalable solutions.",
+    "ctaPrimary": "Let's start your project together",
+    "ctaSecondary": "View Projects",
+    "stats": {
+      "projects": "Delivered projects",
+      "satisfaction": "Satisfied clients",
+      "experience": "Years of experience",
+      "experienceVal": "2 years"
+    },
+    "cards": {
+      "deployment": "Deployment",
+      "growth": "Growth",
+      "reviews": "+200 reviews"
+    }
+  },
   "services": {
     "title": "Our Services",
     "description": "We offer comprehensive development services to help you stay ahead in a constantly evolving digital environment."

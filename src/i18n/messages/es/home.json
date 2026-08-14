@@ -1,4 +1,26 @@
 {
+  "hero": {
+    "badge": "AGENCIA DE DESARROLLO DE SOFTWARE",
+    "titleLine1": "Construyendo el",
+    "titleHighlight1": "futuro",
+    "titleLine2": "de los",
+    "titleHighlight2": "Negocios",
+    "titleHighlight3": "Digitales",
+    "description": "Desarrollo de software personalizado, adaptado a la escalabilidad de su empresa. Transformamos problemas complejos en soluciones elegantes y escalables.",
+    "ctaPrimary": "Comencemos su proyecto juntos",
+    "ctaSecondary": "Ver Proyectos",
+    "stats": {
+      "projects": "Proyectos entregados",
+      "satisfaction": "Clientes satisfechos",
+      "experience": "De experiencia",
+      "experienceVal": "2 años"
+    },
+    "cards": {
+      "deployment": "Despliegue",
+      "growth": "Crecimiento",
+      "reviews": "+200 reseñas"
+    }
+  },
   "services": {
     "title": "Nuestros Servicios",
     "description": "Ofrecemos servicios de desarrollo integral para ayudarte a mantener la ventaja en un entorno digital en constante evolución."
