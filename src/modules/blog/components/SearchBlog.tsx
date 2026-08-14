@@ -4,12 +4,14 @@ import cx from "@/utils/cx";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { LuSearch } from "react-icons/lu";
+import { useTranslations } from "next-intl";
 
 interface SearchBlogProps {
   className?: string;
 }
 
 export default function SearchBlog({ className }: SearchBlogProps) {
+  const t = useTranslations("blog.search");
   const router = useRouter();
   const searchParams = useSearchParams();
   const [value, setValue] = useState<string>(searchParams.get("search") || "");
@@ -39,7 +41,7 @@ export default function SearchBlog({ className }: SearchBlogProps) {
       <input
         type="text"
         className="py-4.5 px-4 text-[#94A3B8] w-full"
-        placeholder="Buscar artículos, temas o autores..."
+        placeholder={t("placeholder")}
         value={value}
         onChange={(e) => setValue(e.target.value)}
         onKeyDown={(e) => {
@@ -50,7 +52,7 @@ export default function SearchBlog({ className }: SearchBlogProps) {
       />
 
       <Button variant="secondary" className="py-2 px-4" onClick={onSearch}>
-        Buscar
+        {t("button")}
       </Button>
     </div>
   );

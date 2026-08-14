@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
 import { Toaster } from "sonner";
@@ -8,6 +8,7 @@ import QueryProvider from "@/context/QueryProvider";
 import { Analytics } from "@vercel/analytics/next";
 import StructuredData from "@/components/seo/StructuredData";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { NextIntlClientProvider } from "next-intl";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -86,28 +87,37 @@ export const metadata: Metadata = {
   category: "technology",
 };
 
-export default function RootLayout({
+import { getMessages } from "next-intl/server";
+
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+  const messages = await getMessages();
+
   return (
-    <html lang="es" className="scroll-smooth">
+    <html lang={locale} className="scroll-smooth">
       <body
         className={`${inter.variable} antialiased font-inter content overflow-x-hidden flex flex-col`}
       >
-        <QueryProvider>
-          <StructuredData />
-          <Header />
-          <main className="flex flex-col h-full overflow-x-hidden">
-            {children}
-          </main>
-          <Footer />
-          <Toaster richColors position="top-right" />
-          <Analytics />
-          <GoogleAnalytics gaId="G-GM7MZ5C5TW" />
-          <GoogleTagManager gtmId="G-GM7MZ5C5TW" />
-        </QueryProvider>
+        <NextIntlClientProvider messages={messages}>
+          <QueryProvider>
+            <StructuredData />
+            <Header />
+            <main className="flex flex-col h-full overflow-x-hidden">
+              {children}
+            </main>
+            <Footer />
+            <Toaster richColors position="top-right" />
+            <Analytics />
+            <GoogleAnalytics gaId="G-GM7MZ5C5TW" />
+            <GoogleTagManager gtmId="G-GM7MZ5C5TW" />
+          </QueryProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

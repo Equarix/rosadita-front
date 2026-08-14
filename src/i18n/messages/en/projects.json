@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Success Cases and Projects",
+    "description": "Explore our portfolio of successful projects. From fintech applications to retail platforms, discover how we have helped companies transform their ideas into high-impact digital realities.",
+    "keywords": "software development portfolio, technology success cases, web projects, mobile app examples, digital transformation cases",
+    "ogTitle": "Digital Innovation Portfolio | Equarix",
+    "ogDescription": "See how we help companies transform their ideas into reality."
+  },
+  "loadingCategories": "Loading categories...",
+  "loadingProjects": "Loading projects...",
+  "hero": {
+    "titleLine1": "Our",
+    "titleHighlight": "Projects",
+    "description": "Explore how we have transformed complex ideas into successful digital solutions. From scalable web platforms to intuitive mobile apps for global clients.",
+    "stat1Label": "PROJECTS",
+    "stat2Label": "SATISFACTION",
+    "stat3Label": "COUNTRIES"
+  },
+  "footer": {
+    "badge": "CONTINUOUS INNOVATION",
+    "titleLine1": "Have a project in mind?",
+    "titleHighlight": "Let's make it happen.",
+    "description": "Our team is ready to help you convert your abstract vision into a high-impact digital reality. Design, strategy, and technology all in one place.",
+    "ctaPrimary": "Start Project Today",
+    "ctaSecondary": "Contact Experts ↗"
+  }
+}

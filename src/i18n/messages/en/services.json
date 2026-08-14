@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "title": "Our Services",
+    "description": "Discover our wide range of software development services: custom web development, mobile apps iOS & Android, tech consulting, and digital transformation.",
+    "keywords": "web development services, mobile app development, IT consulting, custom software, cloud computing, UX UI design",
+    "ogTitle": "Software Development Services | Equarix",
+    "ogDescription": "Comprehensive tech solutions to boost your business to the next level."
+  },
+  "hero": {
+    "badge": "TECHNOLOGICAL EXCELLENCE",
+    "titleLine1": "Exclusive",
+    "titleHighlight": "Solutions",
+    "description": "Precision software engineering designed to transform business models. We dive deep into every challenge to deliver scalable results."
+  },
+  "items": {
+    "web": {
+      "title": "High-Impact Web Development",
+      "description": [
+        "We create digital ecosystems combining striking visual design with robust technical architecture. We don't just build websites; we develop Progressive Web Apps (PWA) and Single Page Applications (SPA) designed for speed and conversion.",
+        "Our mobile-first approach and strict adherence to accessibility standards ensure your product reaches every user on any device without friction."
+      ],
+      "featuresTitle": "Key Features",
+      "features": {
+        "headless": {
+          "title": "Headless Architecture",
+          "description": "Complete decoupling for maximum content flexibility."
+        },
+        "seo": {
+          "title": "Advanced Technical SEO",
+          "description": "Core Web Vitals optimization for superior ranking."
+        },
+        "frontend": {
+          "title": "Reactive Frontend",
+          "description": "React, Vue, or Angular for dynamic interfaces."
+        },
+        "api": {
+          "title": "API Integration",
+          "description": "Seamless connection with CRMs, ERPs, and payment gateways."
+        }
+      }
+    },
+    "mobile": {
+      "title": "Native Mobile Applications",
+      "description": [
+        "Bring your business into your customers' pockets with delightful mobile apps. We specialize in creating fluid experiences that leverage modern device hardware to the fullest.",
+        "From concept to publication on App Store and Google Play, we manage the entire mobile product lifecycle, ensuring native performance and intuitive UX."
+      ],
+      "featuresTitle": "Technologies & Benefits",
+      "features": {
+        "native": {
+          "title": "Native Development",
+          "description": "Swift (iOS) and Kotlin (Android) for maximum performance."
+        },
+        "crossPlatform": {
+          "title": "Cross-Platform",
+          "description": "React Native and Flutter to reduce time to market."
+        },
+        "design": {
+          "title": "UI/UX Design",
+          "description": "User-centered, accessible interfaces."
+        },
+        "offline": {
+          "title": "Offline First",
+          "description": "Guaranteed functionality even without an internet connection."
+        }
+      }
+    },
+    "cloud": {
+      "title": "Cloud Architecture & DevOps",
+      "description": [
+        "Modernize your infrastructure and accelerate your delivery cycles. We design resilient cloud architectures and automate your IT operations so your team can focus on innovating.",
+        "From complex migrations to DevOps culture implementation, we guarantee high-availability systems and robust security."
+      ],
+      "featuresTitle": "Infrastructure Solutions",
+      "features": {
+        "migration": {
+          "title": "Cloud Migration",
+          "description": "Secure transition to AWS, Azure, or Google Cloud."
+        },
+        "serverless": {
+          "title": "Serverless Computing",
+          "description": "Event-driven architectures that reduce costs."
+        },
+        "cicd": {
+          "title": "CI/CD Pipelines",
+          "description": "Automated continuous integration and deployment."
+        },
+        "docker": {
+          "title": "Docker & Kubernetes",
+          "description": "Enterprise-scale container orchestration."
+        }
+      }
+    },
+    "data": {
+      "title": "Data Intelligence & AI",
+      "description": [
+        "Turn data chaos into a clear competitive advantage. We design data pipelines and Machine Learning models that uncover hidden patterns and predict future trends.",
+        "We empower your organization to make evidence-based decisions through clear and powerful visualizations."
+      ],
+      "featuresTitle": "Analytical Capabilities",
+      "features": {
+        "bi": {
+          "title": "Business Intelligence",
+          "description": "Interactive dashboards (PowerBI, Tableau) for KPIs."
+        },
+        "ml": {
+          "title": "Machine Learning",
+          "description": "Predictive models and recommendation algorithms."
+        },
+        "bigData": {
+          "title": "Big Data Pipelines",
+          "description": "ETL processing for large volumes of data."
+        },
+        "warehouse": {
+          "title": "Data Warehousing",
+          "description": "Centralized and optimized storage for analytics."
+        }
+      }
+    }
+  }
+}

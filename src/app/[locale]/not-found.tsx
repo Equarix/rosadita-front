@@ -1,5 +1,6 @@
 "use client";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import {
   FiHome,
   FiArrowLeft,
@@ -9,6 +10,8 @@ import {
 } from "react-icons/fi";
 
 export default function NotFoundPage() {
+  const t = useTranslations("common.notFound");
+
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen bg-white overflow-hidden font-sans">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
@@ -18,8 +21,8 @@ export default function NotFoundPage() {
           <FiSearch size={22} />
         </div>
         <div>
-          <p className="font-bold text-slate-800 text-sm">Buscando...</p>
-          <p className="text-xs text-slate-400 mt-0.5">Sin resultados</p>
+          <p className="font-bold text-slate-800 text-sm">{t("searching")}</p>
+          <p className="text-xs text-slate-400 mt-0.5">{t("noResults")}</p>
         </div>
       </div>
 
@@ -28,8 +31,8 @@ export default function NotFoundPage() {
           <FiAlertTriangle size={22} />
         </div>
         <div>
-          <p className="font-bold text-slate-800 text-sm">Ruta perdida</p>
-          <p className="text-xs text-slate-400 mt-0.5">La página no existe</p>
+          <p className="font-bold text-slate-800 text-sm">{t("routeLost")}</p>
+          <p className="text-xs text-slate-400 mt-0.5">{t("pageNotExist")}</p>
         </div>
       </div>
 
@@ -37,7 +40,7 @@ export default function NotFoundPage() {
         <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-100 bg-indigo-50/50 mb-8">
           <span className="w-2 h-2 rounded-full bg-[#7375FF] shadow-[0_0_8px_rgba(115,117,255,0.8)]" />
           <span className="text-xs font-semibold tracking-wide text-[#7375FF] uppercase">
-            Error 404
+            {t("badge")}
           </span>
         </div>
 
@@ -46,11 +49,10 @@ export default function NotFoundPage() {
         </h1>
 
         <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-          Página no encontrada
+          {t("title")}
         </h2>
         <p className="text-base sm:text-lg text-slate-500 max-w-[500px] leading-relaxed mb-10">
-          La página que buscas se ha movido, eliminado o nunca existió. Pero no
-          te preocupes, te ayudamos a volver.
+          {t("description")}
         </p>
 
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
@@ -59,7 +61,7 @@ export default function NotFoundPage() {
             className="flex items-center justify-center gap-2 px-8 py-3.5 bg-[#7375FF] hover:bg-[#6264e6] text-white rounded-full font-semibold transition-all duration-200 shadow-lg shadow-[#7375FF]/25 hover:shadow-[#7375FF]/40 hover:-translate-y-0.5 w-full sm:w-auto"
           >
             <FiHome size={18} />
-            <span>Volver al inicio</span>
+            <span>{t("backToHome")}</span>
           </Link>
 
           <button
@@ -67,7 +69,7 @@ export default function NotFoundPage() {
             className="flex items-center justify-center gap-2 px-8 py-3.5 bg-white hover:bg-slate-50 text-slate-700 rounded-full font-semibold transition-all duration-200 border border-slate-200 hover:border-slate-300 w-full sm:w-auto"
           >
             <FiArrowLeft size={18} />
-            <span>Regresar atrás</span>
+            <span>{t("goBack")}</span>
           </button>
         </div>
       </div>

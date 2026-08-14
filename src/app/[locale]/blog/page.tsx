@@ -6,29 +6,34 @@ import HeroBlog from "@/modules/blog/hero/HeroBlog";
 import BlogSections from "@/modules/blog/sections/BlogSections";
 import { Suspense } from "react";
 import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Blog de Tecnología y Desarrollo",
-  description:
-    "Artículos, tutoriales y noticias sobre las últimas tendencias en desarrollo de software, diseño UX/UI y transformación digital. Mantente al día con los expertos de Equarix.",
-  keywords: [
-    "blog tecnología",
-    "artículos programación",
-    "noticias software",
-    "tendencias digitales 2026",
-    "consejos desarrollo web",
-  ],
-  openGraph: {
-    title: "Blog de Innovación Digital | Equarix",
-    description: "Compartimos conocimiento sobre el futuro de la tecnología.",
-    url: "https://equarix.vercel.app/blog",
-    images: ["/images/og-blog.jpg"],
-  },
+type Props = {
+  params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "blog.meta" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    keywords: t("keywords").split(", "),
+    openGraph: {
+      title: t("ogTitle"),
+      description: t("ogDescription"),
+      url: `https://equarix.vercel.app/${locale === "es" ? "blog" : "en/blog"}`,
+      images: ["/images/og-blog.jpg"],
+    },
+  };
+}
 
 export const dynamic = "force-dynamic";
 
 export default async function BlogPage() {
+  const t = await getTranslations("blog");
+
   const res = await fetch(`${env.NEXT_PUBLIC_API_URL}/public/category`);
   const categories: ResponseApi<ResponseCategory[]> = await res.json();
 
@@ -39,7 +44,7 @@ export default async function BlogPage() {
       <Suspense
         fallback={
           <div className="w-full flex items-center justify-center py-8">
-            Cargando categorías...
+            {t("loadingCategories")}
           </div>
         }
       >
@@ -51,7 +56,7 @@ export default async function BlogPage() {
       <Suspense
         fallback={
           <div className="w-full flex items-center justify-center py-20">
-            Loading...
+            {t("loading")}
           </div>
         }
       >

@@ -4,14 +4,15 @@ import Button from "@/components/ui/button/Button";
 import { HeaderLinks } from "./HeaderLinks";
 import { useResponsiveHeader } from "../header/useResponsiveHeader";
 import { useEffect, useState } from "react";
-
-import { usePathname } from "next/navigation";
-import Link from "next/link";
+import { Link, usePathname } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header() {
   const [isMounted, setIsMounted] = useState(false);
   const { open, toggleMenu } = useResponsiveHeader();
   const pathname = usePathname();
+  const t = useTranslations("common.header");
 
   useEffect(() => {
     setIsMounted(true);
@@ -30,14 +31,16 @@ export default function Header() {
 
       <HeaderLinks />
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3 sm:gap-4">
+        <LanguageSwitcher />
+
         <Button buttonType="link" href="/contacto" className="sm:block hidden">
-          Cotizar Servicio
+          {t("quoteButton")}
         </Button>
 
         <button
           onClick={toggleMenu}
-          aria-label="Abrir menú de navegación"
+          aria-label={t("openMenu")}
           aria-expanded={open}
           className="p-2 rounded-md hover:bg-gray-100 transition lg:hidden block"
         >
@@ -53,3 +56,5 @@ export default function Header() {
     </header>
   );
 }
+
+

@@ -1,6 +1,5 @@
 import FooterProject from "@/modules/projects/components/FooterProject";
 import HeroProjects from "@/modules/projects/components/Hero";
-import ProjectCard from "@/modules/project/components/ProjectCard";
 import { Metadata } from "next";
 import { env } from "@/config/env";
 import {
@@ -11,28 +10,34 @@ import { notFound } from "next/navigation";
 import CategoriesProjectSection from "@/modules/projects/components/CategoriesProjectSection";
 import ProjectSections from "@/modules/projects/sections/ProjectSections";
 import { Suspense } from "react";
+import { getTranslations } from "next-intl/server";
+
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = {
-  title: "Casos de Éxito y Proyectos",
-  description:
-    "Explora nuestro portafolio de proyectos exitosos. Desde aplicaciones fintech hasta plataformas retail, descubre cómo hemos ayudado a empresas a transformar sus ideas en realidades digitales de alto impacto.",
-  keywords: [
-    "portafolio desarrollo software",
-    "casos de éxito tecnología",
-    "proyectos web",
-    "ejemplos aplicaciones móviles",
-    "transformación digital casos",
-  ],
-  openGraph: {
-    title: "Portafolio de Innovación Digital | Equarix",
-    description:
-      "Vea cómo ayudamos a las empresas a transformar sus ideas en realidad.",
-    url: "https://equarix.vercel.app/proyectos",
-    images: ["/images/og-projects.jpg"],
-  },
+type Props = {
+  params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "projects.meta" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    keywords: t("keywords").split(", "),
+    openGraph: {
+      title: t("ogTitle"),
+      description: t("ogDescription"),
+      url: `https://equarix.vercel.app/${locale === "es" ? "proyectos" : "en/projects"}`,
+      images: ["/images/og-projects.jpg"],
+    },
+  };
+}
+
 export default async function ProjectPage() {
+  const t = await getTranslations("projects");
+
   const categories = await fetch(
     `${env.NEXT_PUBLIC_API_URL}/public/category-projects`,
   );
@@ -53,7 +58,7 @@ export default async function ProjectPage() {
         <Suspense
           fallback={
             <div className="w-full flex items-center justify-center py-8">
-              Cargando categorías...
+              {t("loadingCategories")}
             </div>
           }
         >
@@ -63,7 +68,7 @@ export default async function ProjectPage() {
         <Suspense
           fallback={
             <div className="w-full flex items-center justify-center py-20">
-              Cargando proyectos...
+              {t("loadingProjects")}
             </div>
           }
         >

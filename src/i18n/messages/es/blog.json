@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Blog de Tecnología y Desarrollo",
+    "description": "Artículos, tutoriales y noticias sobre las últimas tendencias en desarrollo de software, diseño UX/UI y transformación digital. Mantente al día con los expertos de Equarix.",
+    "keywords": "blog tecnología, artículos programación, noticias software, tendencias digitales 2026, consejos desarrollo web",
+    "ogTitle": "Blog de Innovación Digital | Equarix",
+    "ogDescription": "Compartimos conocimiento sobre el futuro de la tecnología."
+  },
+  "loadingCategories": "Cargando categorías...",
+  "loading": "Cargando...",
+  "hero": {
+    "badge": "Nuestras últimas ideas",
+    "titleLine1": "Perspectivas e",
+    "titleHighlight": "Innovación",
+    "description": "Ingeniería de software de precisión diseñada para transformar modelos de negocio. Profundizamos en cada desafío para entregar resultados que escalan."
+  },
+  "search": {
+    "placeholder": "Buscar artículos, temas o autores...",
+    "button": "Buscar"
+  },
+  "footer": {
+    "title": "Mantente actualizado",
+    "description": "Recibe los mejores artículos de desarrollo y tecnología directamente en tu bandeja de entrada. Sin spam.",
+    "emailPlaceholder": "tu@email.com",
+    "subscribe": "Suscribirse"
+  }
+}

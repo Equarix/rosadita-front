@@ -1,0 +1,42 @@
+{
+  "header": {
+    "nav": {
+      "home": "Home",
+      "projects": "Projects",
+      "services": "Services",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "quoteButton": "Get a Quote",
+    "openMenu": "Open navigation menu"
+  },
+  "footer": {
+    "description": "Empowering companies with cutting-edge software solutions. Building the digital future, step by step.",
+    "services": {
+      "title": "Services",
+      "web": "Web Development",
+      "mobile": "Mobile Apps",
+      "consulting": "IT Consulting"
+    },
+    "company": {
+      "title": "Company",
+      "projects": "Projects",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "contact": {
+      "title": "Contact"
+    }
+  },
+  "notFound": {
+    "badge": "Error 404",
+    "searching": "Searching...",
+    "noResults": "No results found",
+    "routeLost": "Lost route",
+    "pageNotExist": "Page does not exist",
+    "title": "Page not found",
+    "description": "The page you are looking for has been moved, deleted, or never existed. But don't worry, we'll help you get back.",
+    "backToHome": "Back to home",
+    "goBack": "Go back"
+  }
+}
