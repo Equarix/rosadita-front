@@ -1,7 +1,7 @@
 "use client";
 import { CarrouselComponent as ICarrouselComponent } from "@/interface/component.interface";
 import { useState } from "react";
-import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
+import { LuChevronLeft, LuChevronRight, LuX, LuDownload, LuMaximize2 } from "react-icons/lu";
 import { motion, AnimatePresence } from "motion/react";
 
 export default function CarrouselComponent({
@@ -11,6 +11,7 @@ export default function CarrouselComponent({
   urls,
 }: ICarrouselComponent) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const nextImage = () => {
     if (!urls || urls.length === 0) return;
@@ -20,6 +21,30 @@ export default function CarrouselComponent({
   const prevImage = () => {
     if (!urls || urls.length === 0) return;
     setCurrentIndex((prev) => (prev - 1 + urls.length) % urls.length);
+  };
+
+  const handleDownload = async (url: string) => {
+    try {
+      const response = await fetch(url);
+      const blob = await response.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = blobUrl;
+      const fileName = url.substring(url.lastIndexOf("/") + 1) || "captura.png";
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(blobUrl);
+    } catch {
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "captura.png";
+      link.target = "_blank";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
 
   return (
@@ -43,32 +68,49 @@ export default function CarrouselComponent({
 
         {urls && urls.length > 0 && (
           <div className="relative w-full max-w-5xl mx-auto rounded-xl shadow-lg border border-gray-200/60 bg-white overflow-hidden">
-            <div className="relative w-full aspect-video bg-gray-50 flex items-center justify-center overflow-hidden">
+            <div 
+              className="relative w-full aspect-video bg-gray-50 flex items-center justify-center overflow-hidden cursor-pointer group"
+              onClick={() => setIsModalOpen(true)}
+            >
               <AnimatePresence mode="wait">
                 <motion.img
                   key={currentIndex}
                   src={urls[currentIndex]}
                   alt={`Pantalla ${currentIndex + 1}`}
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.01]"
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -50 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                 />
               </AnimatePresence>
+
+              {/* Overlay en hover indicando que se puede hacer clic */}
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                <div className="bg-black/70 text-white px-4 py-2 rounded-full flex items-center gap-2 text-sm font-medium backdrop-blur-sm shadow-md">
+                  <LuMaximize2 className="w-4 h-4" />
+                  <span>Ver imagen completa</span>
+                </div>
+              </div>
             </div>
 
             {urls.length > 1 && (
               <>
                 <button
-                  onClick={prevImage}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    prevImage();
+                  }}
                   className="absolute left-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-gray-800/80 hover:bg-gray-800 text-white rounded-full flex items-center justify-center shadow-lg transition-all z-10 focus:outline-none"
                   aria-label="Anterior imagen"
                 >
                   <LuChevronLeft className="w-6 h-6" />
                 </button>
                 <button
-                  onClick={nextImage}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    nextImage();
+                  }}
                   className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-gray-800/80 hover:bg-gray-800 text-white rounded-full flex items-center justify-center shadow-lg transition-all z-10 focus:outline-none"
                   aria-label="Siguiente imagen"
                 >
@@ -82,7 +124,10 @@ export default function CarrouselComponent({
                 {urls.map((_, i) => (
                   <button
                     key={i}
-                    onClick={() => setCurrentIndex(i)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setCurrentIndex(i);
+                    }}
                     className={`transition-all duration-300 rounded-full ${
                       currentIndex === i
                         ? "w-8 h-3 bg-[#8b5cf6]"
@@ -95,6 +140,51 @@ export default function CarrouselComponent({
             )}
           </div>
         )}
+
+        {/* Modal de Imagen Completa */}
+        <AnimatePresence>
+          {isModalOpen && urls && urls[currentIndex] && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsModalOpen(false)}
+              className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex flex-col items-center justify-center p-4 md:p-8"
+            >
+              {/* Botón para cerrar */}
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="absolute top-4 right-4 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-colors z-50 focus:outline-none"
+                aria-label="Cerrar modal"
+              >
+                <LuX className="w-6 h-6" />
+              </button>
+
+              {/* Contenido de la imagen */}
+              <div 
+                className="relative max-w-7xl max-h-[82vh] w-full flex items-center justify-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <img
+                  src={urls[currentIndex]}
+                  alt={`Pantalla ${currentIndex + 1} en tamaño completo`}
+                  className="max-w-full max-h-[82vh] object-contain rounded-lg shadow-2xl"
+                />
+              </div>
+
+              {/* Único Botón de Descarga */}
+              <div className="mt-6 z-50" onClick={(e) => e.stopPropagation()}>
+                <button
+                  onClick={() => handleDownload(urls[currentIndex])}
+                  className="flex items-center gap-2 bg-[#8b5cf6] hover:bg-[#7c3aed] text-white px-6 py-3 rounded-full font-semibold shadow-lg transition-all transform hover:scale-105 active:scale-95 focus:outline-none"
+                >
+                  <LuDownload className="w-5 h-5" />
+                  <span>Descargar Imagen</span>
+                </button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
