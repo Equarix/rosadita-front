@@ -2,16 +2,22 @@
 
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
+import { useParams } from "next/navigation";
 import { HiGlobeAlt } from "react-icons/hi2";
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+  const params = useParams();
 
   const toggleLanguage = () => {
     const nextLocale = locale === "es" ? "en" : "es";
-    router.replace(pathname as any, { locale: nextLocale });
+    router.replace(
+      // @ts-expect-error -- next-intl accepts { pathname, params }
+      { pathname, params },
+      { locale: nextLocale }
+    );
   };
 
   return (
